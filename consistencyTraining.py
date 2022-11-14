@@ -129,7 +129,7 @@ def train(epoch, train_loader, model, optimizer, num_classes, noise_or_not):
 
         # obtain confidence indexes for thresh metric
         thresh_confident_ind, thresh_unconfident_ind = thresh_metric(
-            logits, labels, num_classes)
+            logits, labels, num_classes, threshold=0.3)
 
         # calculate how accurate
         thresh_confident_samples = indexes[thresh_confident_ind]

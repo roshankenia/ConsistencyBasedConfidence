@@ -86,7 +86,7 @@ def train(epoch, train_loader, model, optimizer, num_classes, noise_or_not):
 
         # obtain confidence indexes
         confident_ind, unconfident_ind = consistencyIndexes(
-            logits, labels, num_classes)
+            logits, labels, num_classes, threshold=0.3)
 
         # print('conf:',confident_ind)
         # print('unconf:',unconfident_ind)
