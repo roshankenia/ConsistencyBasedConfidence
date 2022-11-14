@@ -7,7 +7,7 @@ from data.datasets import input_dataset
 from models import *
 import argparse
 import sys
-from consistencyMetric import consistencyIndexes
+from consistencyAvgMetric import consistencyIndexes
 # ensure we are running on the correct gpu
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
 os.environ["CUDA_VISIBLE_DEVICES"] = "6"  # (xxxx is your specific GPU ID)
@@ -191,7 +191,7 @@ epoch = 0
 train_acc = 0
 
 # training
-file = open("confident_training.txt", "w")
+file = open("confident_avg_training.txt", "w")
 max_test = 0
 
 for epoch in range(args.n_epoch):

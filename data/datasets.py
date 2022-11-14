@@ -1,7 +1,6 @@
 import numpy as np
 import torchvision.transforms as transforms
 from .cifar import CIFAR10, CIFAR100
-from .vec_cifar import VECCIFAR10
 import os
 import sys
 import torch
@@ -37,24 +36,6 @@ test_cifar100_transform = transforms.Compose([
     transforms.ToTensor(),
     transforms.Normalize((0.5071, 0.4867, 0.4408), (0.2675, 0.2565, 0.2761)),
 ])
-
-
-def vec_input_dataset(dataset, noise_type, noise_path, is_human):
-    if dataset == 'cifar10':
-        train_dataset = VECCIFAR10(root='~/data/',
-                                   download=True,
-                                   train=True,
-                                   noise_type=noise_type,
-                                   noise_path=noise_path, is_human=is_human
-                                   )
-        test_dataset = VECCIFAR10(root='~/data/',
-                                   download=False,
-                                   train=False,
-                                   noise_type=noise_type
-                                   )
-        num_classes = 10
-        num_training_samples = 50000
-    return train_dataset, test_dataset, num_classes, num_training_samples
 
 
 def input_dataset(dataset, noise_type, noise_path, is_human):
