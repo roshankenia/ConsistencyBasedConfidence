@@ -1,0 +1,704 @@
+
+epoch: 0
+	train acc on train images is 20.867966751918157
+	test acc on test images is 33.2
+	num of noisy samples in confident: 2876 out of: 35231
+	num of noisy samples in unconfident: 1629 out of: 14769
+	test acc on test images is 33.2
+
+epoch: 1
+	train acc on train images is 36.55410805626598
+	test acc on test images is 45.9
+	num of noisy samples in confident: 2045 out of: 31512
+	num of noisy samples in unconfident: 2460 out of: 18488
+	test acc on test images is 45.9
+
+epoch: 2
+	train acc on train images is 47.38451086956522
+	test acc on test images is 53.05
+	num of noisy samples in confident: 1663 out of: 31160
+	num of noisy samples in unconfident: 2842 out of: 18840
+	test acc on test images is 53.05
+
+epoch: 3
+	train acc on train images is 55.09710677749361
+	test acc on test images is 62.59
+	num of noisy samples in confident: 1342 out of: 31489
+	num of noisy samples in unconfident: 3163 out of: 18511
+	test acc on test images is 62.59
+
+epoch: 4
+	train acc on train images is 60.783248081841435
+	test acc on test images is 64.37
+	num of noisy samples in confident: 1093 out of: 31939
+	num of noisy samples in unconfident: 3412 out of: 18061
+	test acc on test images is 64.37
+
+epoch: 5
+	train acc on train images is 65.36045396419438
+	test acc on test images is 65.33
+	num of noisy samples in confident: 965 out of: 32583
+	num of noisy samples in unconfident: 3540 out of: 17417
+	test acc on test images is 65.33
+
+epoch: 6
+	train acc on train images is 69.58879475703324
+	test acc on test images is 75.43
+	num of noisy samples in confident: 819 out of: 33102
+	num of noisy samples in unconfident: 3686 out of: 16898
+	test acc on test images is 75.43
+
+epoch: 7
+	train acc on train images is 72.28860294117646
+	test acc on test images is 74.52
+	num of noisy samples in confident: 671 out of: 33570
+	num of noisy samples in unconfident: 3834 out of: 16430
+	test acc on test images is 74.52
+
+epoch: 8
+	train acc on train images is 74.14082480818415
+	test acc on test images is 74.41
+	num of noisy samples in confident: 600 out of: 34005
+	num of noisy samples in unconfident: 3905 out of: 15995
+	test acc on test images is 74.41
+
+epoch: 9
+	train acc on train images is 75.56465792838874
+	test acc on test images is 77.87
+	num of noisy samples in confident: 615 out of: 34468
+	num of noisy samples in unconfident: 3890 out of: 15532
+	test acc on test images is 77.87
+
+epoch: 10
+	train acc on train images is 75.88395140664962
+	test acc on test images is 78.79
+	num of noisy samples in confident: 557 out of: 34512
+	num of noisy samples in unconfident: 3948 out of: 15488
+	test acc on test images is 78.79
+
+epoch: 11
+	train acc on train images is 77.17591112531969
+	test acc on test images is 75.12
+	num of noisy samples in confident: 543 out of: 34790
+	num of noisy samples in unconfident: 3962 out of: 15210
+	test acc on test images is 75.12
+
+epoch: 12
+	train acc on train images is 77.52157928388746
+	test acc on test images is 77.3
+	num of noisy samples in confident: 529 out of: 34830
+	num of noisy samples in unconfident: 3976 out of: 15170
+	test acc on test images is 77.3
+
+epoch: 13
+	train acc on train images is 78.19133631713555
+	test acc on test images is 77.13
+	num of noisy samples in confident: 475 out of: 35125
+	num of noisy samples in unconfident: 4030 out of: 14875
+	test acc on test images is 77.13
+
+epoch: 14
+	train acc on train images is 78.2664641943734
+	test acc on test images is 77.5
+	num of noisy samples in confident: 501 out of: 35141
+	num of noisy samples in unconfident: 4004 out of: 14859
+	test acc on test images is 77.5
+
+epoch: 15
+	train acc on train images is 78.89546035805627
+	test acc on test images is 75.57
+	num of noisy samples in confident: 496 out of: 35427
+	num of noisy samples in unconfident: 4009 out of: 14573
+	test acc on test images is 75.57
+
+epoch: 16
+	train acc on train images is 79.22953964194373
+	test acc on test images is 78.44
+	num of noisy samples in confident: 480 out of: 35436
+	num of noisy samples in unconfident: 4025 out of: 14564
+	test acc on test images is 78.44
+
+epoch: 17
+	train acc on train images is 79.3274456521739
+	test acc on test images is 77.19
+	num of noisy samples in confident: 476 out of: 35385
+	num of noisy samples in unconfident: 4029 out of: 14615
+	test acc on test images is 77.19
+
+epoch: 18
+	train acc on train images is 79.84295076726343
+	test acc on test images is 80.41
+	num of noisy samples in confident: 447 out of: 35480
+	num of noisy samples in unconfident: 4058 out of: 14520
+	test acc on test images is 80.41
+
+epoch: 19
+	train acc on train images is 79.98321611253196
+	test acc on test images is 80.57
+	num of noisy samples in confident: 466 out of: 35605
+	num of noisy samples in unconfident: 4039 out of: 14395
+	test acc on test images is 80.57
+
+epoch: 20
+	train acc on train images is 80.26334718670077
+	test acc on test images is 78.82
+	num of noisy samples in confident: 439 out of: 35725
+	num of noisy samples in unconfident: 4066 out of: 14275
+	test acc on test images is 78.82
+
+epoch: 21
+	train acc on train images is 80.29132033248082
+	test acc on test images is 79.47
+	num of noisy samples in confident: 450 out of: 35783
+	num of noisy samples in unconfident: 4055 out of: 14217
+	test acc on test images is 79.47
+
+epoch: 22
+	train acc on train images is 80.47514386189258
+	test acc on test images is 82.33
+	num of noisy samples in confident: 442 out of: 35740
+	num of noisy samples in unconfident: 4063 out of: 14260
+	test acc on test images is 82.33
+
+epoch: 23
+	train acc on train images is 80.622202685422
+	test acc on test images is 80.49
+	num of noisy samples in confident: 463 out of: 35831
+	num of noisy samples in unconfident: 4042 out of: 14169
+	test acc on test images is 80.49
+
+epoch: 24
+	train acc on train images is 80.7253037084399
+	test acc on test images is 81.91
+	num of noisy samples in confident: 493 out of: 35912
+	num of noisy samples in unconfident: 4012 out of: 14088
+	test acc on test images is 81.91
+
+epoch: 25
+	train acc on train images is 80.66416240409207
+	test acc on test images is 80.04
+	num of noisy samples in confident: 436 out of: 36017
+	num of noisy samples in unconfident: 4069 out of: 13983
+	test acc on test images is 80.04
+
+epoch: 26
+	train acc on train images is 80.93909846547315
+	test acc on test images is 81.24
+	num of noisy samples in confident: 431 out of: 36114
+	num of noisy samples in unconfident: 4074 out of: 13886
+	test acc on test images is 81.24
+
+epoch: 27
+	train acc on train images is 81.18406329923273
+	test acc on test images is 78.45
+	num of noisy samples in confident: 435 out of: 36094
+	num of noisy samples in unconfident: 4070 out of: 13906
+	test acc on test images is 78.45
+
+epoch: 28
+	train acc on train images is 80.98065856777494
+	test acc on test images is 82.49
+	num of noisy samples in confident: 446 out of: 35984
+	num of noisy samples in unconfident: 4059 out of: 14016
+	test acc on test images is 82.49
+
+epoch: 29
+	train acc on train images is 81.2735773657289
+	test acc on test images is 79.13
+	num of noisy samples in confident: 448 out of: 36074
+	num of noisy samples in unconfident: 4057 out of: 13926
+	test acc on test images is 79.13
+
+epoch: 30
+	train acc on train images is 81.40425191815856
+	test acc on test images is 80.24
+	num of noisy samples in confident: 403 out of: 36116
+	num of noisy samples in unconfident: 4102 out of: 13884
+	test acc on test images is 80.24
+
+epoch: 31
+	train acc on train images is 81.4534047314578
+	test acc on test images is 84.28
+	num of noisy samples in confident: 415 out of: 36106
+	num of noisy samples in unconfident: 4090 out of: 13894
+	test acc on test images is 84.28
+
+epoch: 32
+	train acc on train images is 81.60925511508951
+	test acc on test images is 80.59
+	num of noisy samples in confident: 433 out of: 36215
+	num of noisy samples in unconfident: 4072 out of: 13785
+	test acc on test images is 80.59
+
+epoch: 33
+	train acc on train images is 81.68158567774935
+	test acc on test images is 82.83
+	num of noisy samples in confident: 397 out of: 36198
+	num of noisy samples in unconfident: 4108 out of: 13802
+	test acc on test images is 82.83
+
+epoch: 34
+	train acc on train images is 81.60246163682865
+	test acc on test images is 77.98
+	num of noisy samples in confident: 411 out of: 36191
+	num of noisy samples in unconfident: 4094 out of: 13809
+	test acc on test images is 77.98
+
+epoch: 35
+	train acc on train images is 81.79387787723785
+	test acc on test images is 79.13
+	num of noisy samples in confident: 406 out of: 36170
+	num of noisy samples in unconfident: 4099 out of: 13830
+	test acc on test images is 79.13
+
+epoch: 36
+	train acc on train images is 81.9133631713555
+	test acc on test images is 79.31
+	num of noisy samples in confident: 418 out of: 36267
+	num of noisy samples in unconfident: 4087 out of: 13733
+	test acc on test images is 79.31
+
+epoch: 37
+	train acc on train images is 81.82225063938618
+	test acc on test images is 84.11
+	num of noisy samples in confident: 425 out of: 36253
+	num of noisy samples in unconfident: 4080 out of: 13747
+	test acc on test images is 84.11
+
+epoch: 38
+	train acc on train images is 82.14434143222506
+	test acc on test images is 80.27
+	num of noisy samples in confident: 393 out of: 36281
+	num of noisy samples in unconfident: 4112 out of: 13719
+	test acc on test images is 80.27
+
+epoch: 39
+	train acc on train images is 82.03684462915601
+	test acc on test images is 84.22
+	num of noisy samples in confident: 422 out of: 36321
+	num of noisy samples in unconfident: 4083 out of: 13679
+	test acc on test images is 84.22
+
+epoch: 40
+	train acc on train images is 82.03604539641944
+	test acc on test images is 85.04
+	num of noisy samples in confident: 417 out of: 36282
+	num of noisy samples in unconfident: 4088 out of: 13718
+	test acc on test images is 85.04
+
+epoch: 41
+	train acc on train images is 82.09718670076727
+	test acc on test images is 83.06
+	num of noisy samples in confident: 428 out of: 36291
+	num of noisy samples in unconfident: 4077 out of: 13709
+	test acc on test images is 83.06
+
+epoch: 42
+	train acc on train images is 81.9665121483376
+	test acc on test images is 75.15
+	num of noisy samples in confident: 395 out of: 36414
+	num of noisy samples in unconfident: 4110 out of: 13586
+	test acc on test images is 75.15
+
+epoch: 43
+	train acc on train images is 82.27022058823529
+	test acc on test images is 81.83
+	num of noisy samples in confident: 412 out of: 36388
+	num of noisy samples in unconfident: 4093 out of: 13612
+	test acc on test images is 81.83
+
+epoch: 44
+	train acc on train images is 82.08519820971867
+	test acc on test images is 80.81
+	num of noisy samples in confident: 404 out of: 36363
+	num of noisy samples in unconfident: 4101 out of: 13637
+	test acc on test images is 80.81
+
+epoch: 45
+	train acc on train images is 82.3849104859335
+	test acc on test images is 82.62
+	num of noisy samples in confident: 423 out of: 36464
+	num of noisy samples in unconfident: 4082 out of: 13536
+	test acc on test images is 82.62
+
+epoch: 46
+	train acc on train images is 82.24304667519182
+	test acc on test images is 83.8
+	num of noisy samples in confident: 393 out of: 36486
+	num of noisy samples in unconfident: 4112 out of: 13514
+	test acc on test images is 83.8
+
+epoch: 47
+	train acc on train images is 82.12715792838874
+	test acc on test images is 79.72
+	num of noisy samples in confident: 422 out of: 36368
+	num of noisy samples in unconfident: 4083 out of: 13632
+	test acc on test images is 79.72
+
+epoch: 48
+	train acc on train images is 82.38690856777494
+	test acc on test images is 80.88
+	num of noisy samples in confident: 411 out of: 36429
+	num of noisy samples in unconfident: 4094 out of: 13571
+	test acc on test images is 80.88
+
+epoch: 49
+	train acc on train images is 82.26662404092072
+	test acc on test images is 79.32
+	num of noisy samples in confident: 396 out of: 36430
+	num of noisy samples in unconfident: 4109 out of: 13570
+	test acc on test images is 79.32
+
+epoch: 50
+	train acc on train images is 82.50079923273657
+	test acc on test images is 81.58
+	num of noisy samples in confident: 393 out of: 36429
+	num of noisy samples in unconfident: 4112 out of: 13571
+	test acc on test images is 81.58
+
+epoch: 51
+	train acc on train images is 82.35613810741688
+	test acc on test images is 78.61
+	num of noisy samples in confident: 417 out of: 36464
+	num of noisy samples in unconfident: 4088 out of: 13536
+	test acc on test images is 78.61
+
+epoch: 52
+	train acc on train images is 82.32816496163683
+	test acc on test images is 79.47
+	num of noisy samples in confident: 410 out of: 36537
+	num of noisy samples in unconfident: 4095 out of: 13463
+	test acc on test images is 79.47
+
+epoch: 53
+	train acc on train images is 82.51958120204604
+	test acc on test images is 83.34
+	num of noisy samples in confident: 383 out of: 36413
+	num of noisy samples in unconfident: 4122 out of: 13587
+	test acc on test images is 83.34
+
+epoch: 54
+	train acc on train images is 82.38331202046035
+	test acc on test images is 82.49
+	num of noisy samples in confident: 398 out of: 36453
+	num of noisy samples in unconfident: 4107 out of: 13547
+	test acc on test images is 82.49
+
+epoch: 55
+	train acc on train images is 82.51838235294117
+	test acc on test images is 79.4
+	num of noisy samples in confident: 417 out of: 36510
+	num of noisy samples in unconfident: 4088 out of: 13490
+	test acc on test images is 79.4
+
+epoch: 56
+	train acc on train images is 82.47682225063939
+	test acc on test images is 80.61
+	num of noisy samples in confident: 420 out of: 36432
+	num of noisy samples in unconfident: 4085 out of: 13568
+	test acc on test images is 80.61
+
+epoch: 57
+	train acc on train images is 82.48960997442455
+	test acc on test images is 81.56
+	num of noisy samples in confident: 446 out of: 36575
+	num of noisy samples in unconfident: 4059 out of: 13425
+	test acc on test images is 81.56
+
+epoch: 58
+	train acc on train images is 82.41008631713555
+	test acc on test images is 82.25
+	num of noisy samples in confident: 435 out of: 36482
+	num of noisy samples in unconfident: 4070 out of: 13518
+	test acc on test images is 82.25
+
+epoch: 59
+	train acc on train images is 82.4704283887468
+	test acc on test images is 82.1
+	num of noisy samples in confident: 389 out of: 36480
+	num of noisy samples in unconfident: 4116 out of: 13520
+	test acc on test images is 82.1
+
+epoch: 60
+	train acc on train images is 87.42487212276215
+	test acc on test images is 91.28
+	num of noisy samples in confident: 349 out of: 38206
+	num of noisy samples in unconfident: 4156 out of: 11794
+	test acc on test images is 91.28
+
+epoch: 61
+	train acc on train images is 89.11245204603581
+	test acc on test images is 91.48
+	num of noisy samples in confident: 335 out of: 38768
+	num of noisy samples in unconfident: 4170 out of: 11232
+	test acc on test images is 91.48
+
+epoch: 62
+	train acc on train images is 89.62715792838874
+	test acc on test images is 91.62
+	num of noisy samples in confident: 377 out of: 39036
+	num of noisy samples in unconfident: 4128 out of: 10964
+	test acc on test images is 91.62
+
+epoch: 63
+	train acc on train images is 90.05115089514067
+	test acc on test images is 91.47
+	num of noisy samples in confident: 414 out of: 39096
+	num of noisy samples in unconfident: 4091 out of: 10904
+	test acc on test images is 91.47
+
+epoch: 64
+	train acc on train images is 90.49392583120205
+	test acc on test images is 91.62
+	num of noisy samples in confident: 460 out of: 39307
+	num of noisy samples in unconfident: 4045 out of: 10693
+	test acc on test images is 91.62
+
+epoch: 65
+	train acc on train images is 90.8871483375959
+	test acc on test images is 91.35
+	num of noisy samples in confident: 446 out of: 39364
+	num of noisy samples in unconfident: 4059 out of: 10636
+	test acc on test images is 91.35
+
+epoch: 66
+	train acc on train images is 91.39066496163683
+	test acc on test images is 91.11
+	num of noisy samples in confident: 539 out of: 39563
+	num of noisy samples in unconfident: 3966 out of: 10437
+	test acc on test images is 91.11
+
+epoch: 67
+	train acc on train images is 91.55610613810742
+	test acc on test images is 90.5
+	num of noisy samples in confident: 603 out of: 39617
+	num of noisy samples in unconfident: 3902 out of: 10383
+	test acc on test images is 90.5
+
+epoch: 68
+	train acc on train images is 91.88179347826087
+	test acc on test images is 90.18
+	num of noisy samples in confident: 662 out of: 39742
+	num of noisy samples in unconfident: 3843 out of: 10258
+	test acc on test images is 90.18
+
+epoch: 69
+	train acc on train images is 92.11756713554988
+	test acc on test images is 90.47
+	num of noisy samples in confident: 711 out of: 39666
+	num of noisy samples in unconfident: 3794 out of: 10334
+	test acc on test images is 90.47
+
+epoch: 70
+	train acc on train images is 92.21427429667519
+	test acc on test images is 90.0
+	num of noisy samples in confident: 742 out of: 39702
+	num of noisy samples in unconfident: 3763 out of: 10298
+	test acc on test images is 90.0
+
+epoch: 71
+	train acc on train images is 92.67183503836317
+	test acc on test images is 89.62
+	num of noisy samples in confident: 843 out of: 39930
+	num of noisy samples in unconfident: 3662 out of: 10070
+	test acc on test images is 89.62
+
+epoch: 72
+	train acc on train images is 92.64026534526855
+	test acc on test images is 89.71
+	num of noisy samples in confident: 872 out of: 40020
+	num of noisy samples in unconfident: 3633 out of: 9980
+	test acc on test images is 89.71
+
+epoch: 73
+	train acc on train images is 92.94157608695652
+	test acc on test images is 88.92
+	num of noisy samples in confident: 935 out of: 40047
+	num of noisy samples in unconfident: 3570 out of: 9953
+	test acc on test images is 88.92
+
+epoch: 74
+	train acc on train images is 93.05666560102301
+	test acc on test images is 88.58
+	num of noisy samples in confident: 950 out of: 40104
+	num of noisy samples in unconfident: 3555 out of: 9896
+	test acc on test images is 88.58
+
+epoch: 75
+	train acc on train images is 93.1341911764706
+	test acc on test images is 89.33
+	num of noisy samples in confident: 1008 out of: 40061
+	num of noisy samples in unconfident: 3497 out of: 9939
+	test acc on test images is 89.33
+
+epoch: 76
+	train acc on train images is 93.32121163682865
+	test acc on test images is 89.23
+	num of noisy samples in confident: 1014 out of: 40126
+	num of noisy samples in unconfident: 3491 out of: 9874
+	test acc on test images is 89.23
+
+epoch: 77
+	train acc on train images is 93.3076246803069
+	test acc on test images is 88.74
+	num of noisy samples in confident: 1083 out of: 40179
+	num of noisy samples in unconfident: 3422 out of: 9821
+	test acc on test images is 88.74
+
+epoch: 78
+	train acc on train images is 93.39234335038363
+	test acc on test images is 88.95
+	num of noisy samples in confident: 1125 out of: 40179
+	num of noisy samples in unconfident: 3380 out of: 9821
+	test acc on test images is 88.95
+
+epoch: 79
+	train acc on train images is 93.55938299232737
+	test acc on test images is 89.29
+	num of noisy samples in confident: 1128 out of: 40244
+	num of noisy samples in unconfident: 3377 out of: 9756
+	test acc on test images is 89.29
+
+epoch: 80
+	train acc on train images is 93.54859335038363
+	test acc on test images is 88.2
+	num of noisy samples in confident: 1140 out of: 40281
+	num of noisy samples in unconfident: 3365 out of: 9719
+	test acc on test images is 88.2
+
+epoch: 81
+	train acc on train images is 93.64050511508951
+	test acc on test images is 88.2
+	num of noisy samples in confident: 1193 out of: 40219
+	num of noisy samples in unconfident: 3312 out of: 9781
+	test acc on test images is 88.2
+
+epoch: 82
+	train acc on train images is 93.71283567774935
+	test acc on test images is 87.82
+	num of noisy samples in confident: 1216 out of: 40316
+	num of noisy samples in unconfident: 3289 out of: 9684
+	test acc on test images is 87.82
+
+epoch: 83
+	train acc on train images is 94.03053069053709
+	test acc on test images is 88.03
+	num of noisy samples in confident: 1253 out of: 40315
+	num of noisy samples in unconfident: 3252 out of: 9685
+	test acc on test images is 88.03
+
+epoch: 84
+	train acc on train images is 93.76398657289002
+	test acc on test images is 88.21
+	num of noisy samples in confident: 1290 out of: 40358
+	num of noisy samples in unconfident: 3215 out of: 9642
+	test acc on test images is 88.21
+
+epoch: 85
+	train acc on train images is 93.87268222506394
+	test acc on test images is 87.84
+	num of noisy samples in confident: 1278 out of: 40424
+	num of noisy samples in unconfident: 3227 out of: 9576
+	test acc on test images is 87.84
+
+epoch: 86
+	train acc on train images is 94.04291879795396
+	test acc on test images is 88.38
+	num of noisy samples in confident: 1319 out of: 40342
+	num of noisy samples in unconfident: 3186 out of: 9658
+	test acc on test images is 88.38
+
+epoch: 87
+	train acc on train images is 94.12484015345268
+	test acc on test images is 86.81
+	num of noisy samples in confident: 1333 out of: 40405
+	num of noisy samples in unconfident: 3172 out of: 9595
+	test acc on test images is 86.81
+
+epoch: 88
+	train acc on train images is 94.31985294117646
+	test acc on test images is 87.82
+	num of noisy samples in confident: 1387 out of: 40396
+	num of noisy samples in unconfident: 3118 out of: 9604
+	test acc on test images is 87.82
+
+epoch: 89
+	train acc on train images is 94.24392583120205
+	test acc on test images is 85.6
+	num of noisy samples in confident: 1389 out of: 40437
+	num of noisy samples in unconfident: 3116 out of: 9563
+	test acc on test images is 85.6
+
+epoch: 90
+	train acc on train images is 94.39657928388746
+	test acc on test images is 86.72
+	num of noisy samples in confident: 1376 out of: 40553
+	num of noisy samples in unconfident: 3129 out of: 9447
+	test acc on test images is 86.72
+
+epoch: 91
+	train acc on train images is 94.38858695652173
+	test acc on test images is 85.77
+	num of noisy samples in confident: 1423 out of: 40429
+	num of noisy samples in unconfident: 3082 out of: 9571
+	test acc on test images is 85.77
+
+epoch: 92
+	train acc on train images is 94.62476023017904
+	test acc on test images is 87.19
+	num of noisy samples in confident: 1446 out of: 40517
+	num of noisy samples in unconfident: 3059 out of: 9483
+	test acc on test images is 87.19
+
+epoch: 93
+	train acc on train images is 94.36660805626599
+	test acc on test images is 87.36
+	num of noisy samples in confident: 1457 out of: 40434
+	num of noisy samples in unconfident: 3048 out of: 9566
+	test acc on test images is 87.36
+
+epoch: 94
+	train acc on train images is 94.44333439897699
+	test acc on test images is 87.76
+	num of noisy samples in confident: 1433 out of: 40532
+	num of noisy samples in unconfident: 3072 out of: 9468
+	test acc on test images is 87.76
+
+epoch: 95
+	train acc on train images is 94.6315537084399
+	test acc on test images is 87.13
+	num of noisy samples in confident: 1485 out of: 40581
+	num of noisy samples in unconfident: 3020 out of: 9419
+	test acc on test images is 87.13
+
+epoch: 96
+	train acc on train images is 94.86652813299233
+	test acc on test images is 87.25
+	num of noisy samples in confident: 1548 out of: 40604
+	num of noisy samples in unconfident: 2957 out of: 9396
+	test acc on test images is 87.25
+
+epoch: 97
+	train acc on train images is 95.05234974424552
+	test acc on test images is 88.27
+	num of noisy samples in confident: 1544 out of: 40531
+	num of noisy samples in unconfident: 2961 out of: 9469
+	test acc on test images is 88.27
+
+epoch: 98
+	train acc on train images is 95.06034207161126
+	test acc on test images is 86.99
+	num of noisy samples in confident: 1599 out of: 40637
+	num of noisy samples in unconfident: 2906 out of: 9363
+	test acc on test images is 86.99
+
+epoch: 99
+	train acc on train images is 94.90609015345268
+	test acc on test images is 87.64
+	num of noisy samples in confident: 1523 out of: 40553
+	num of noisy samples in unconfident: 2982 out of: 9447
+	test acc on test images is 87.64
+
+
+final test acc on test images is 87.64
+max test acc on test images is 91.62
