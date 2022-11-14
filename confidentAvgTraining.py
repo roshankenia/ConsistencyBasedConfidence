@@ -191,7 +191,9 @@ epoch = 0
 train_acc = 0
 
 # training
-file = open("confident_avg_training.txt", "w")
+file = open('./checkpoint/%s_%s' %
+            (args.dataset, args.noise_type)+'_avg.txt', "w")
+
 max_test = 0
 
 for epoch in range(args.n_epoch):
