@@ -7,6 +7,7 @@ from data.datasets import input_dataset
 from models import *
 import argparse
 import sys
+import time
 from consistencyAvgMetric import consistencyIndexes
 # ensure we are running on the correct gpu
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
@@ -32,6 +33,9 @@ parser.add_argument('--print_freq', type=int, default=50)
 parser.add_argument('--num_workers', type=int, default=4,
                     help='how many subprocesses to use for data loading')
 parser.add_argument('--is_human', action='store_true', default=False)
+
+# store starting time
+begin = time.time()
 
 # Adjust learning rate and for SGD Optimizer
 
@@ -222,4 +226,11 @@ for epoch in range(args.n_epoch):
     file.write("\ttest acc on test images is "+str(test_acc)+"\n")
 file.write("\n\nfinal test acc on test images is "+str(test_acc)+"\n")
 file.write("max test acc on test images is "+str(max_test)+"\n")
+
+# store end time
+end = time.time()
+timeTaken = time.strftime("%H:%M:%S", time.gmtime(end-begin))
+# total time taken
+file.write('Total runtime of the program is: ' + timeTaken)
+file.flush()
 file.close()
