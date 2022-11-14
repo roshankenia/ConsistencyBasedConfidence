@@ -8,7 +8,9 @@ from models import *
 import argparse
 import sys
 import time
-from consistencySumMetric import consistencyIndexes
+from consistencySumMetric import consistencyIndexes as sum_metric
+from consistencyAvgMetric import consistencyIndexes as avg_metric
+from consistencyThreshMetric import consistencyIndexes as thresh_metric
 # ensure we are running on the correct gpu
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
 os.environ["CUDA_VISIBLE_DEVICES"] = "6"  # (xxxx is your specific GPU ID)
@@ -68,11 +70,20 @@ def train(epoch, train_loader, model, optimizer, num_classes, noise_or_not):
     train_total = 0
     train_correct = 0
 
-    conf_inc = 0
-    num_conf = 0
+    sum_conf_inc = 0
+    sum_num_conf = 0
+    sum_unconf_inc = 0
+    sum_num_unconf = 0
 
-    unconf_inc = 0
-    num_unconf = 0
+    avg_conf_inc = 0
+    avg_num_conf = 0
+    avg_unconf_inc = 0
+    avg_num_unconf = 0
+
+    thresh_conf_inc = 0
+    thresh_num_conf = 0
+    thresh_unconf_inc = 0
+    thresh_num_unconf = 0
 
     for i, (images, labels, indexes) in enumerate(train_loader):
         ind = indexes.cpu().numpy().transpose()
@@ -84,24 +95,53 @@ def train(epoch, train_loader, model, optimizer, num_classes, noise_or_not):
         # Forward + Backward + Optimize
         logits = model(images)
 
-        # obtain confidence indexes
-        confident_ind, unconfident_ind = consistencyIndexes(
+        # obtain confidence indexes for sum metric
+        sum_confident_ind, sum_unconfident_ind = sum_metric(
             logits, labels, num_classes)
 
-        # print('conf:',confident_ind)
-        # print('unconf:',unconfident_ind)
+        # calculate how accurate
+        sum_confident_samples = indexes[sum_confident_ind]
+        sum_unconfident_samples = indexes[sum_unconfident_ind]
+
+        for ind in sum_confident_samples:
+            sum_conf_inc += noise_or_not[ind]
+        sum_num_conf += len(sum_confident_samples)
+
+        for ind in sum_unconfident_samples:
+            sum_unconf_inc += noise_or_not[ind]
+        sum_num_unconf += len(sum_unconfident_samples)
+
+        # obtain confidence indexes for avg metric
+        avg_confident_ind, avg_unconfident_ind = avg_metric(
+            logits, labels, num_classes)
 
         # calculate how accurate
-        confident_samples = indexes[confident_ind]
-        unconfident_samples = indexes[unconfident_ind]
+        avg_confident_samples = indexes[avg_confident_ind]
+        avg_unconfident_samples = indexes[avg_unconfident_ind]
 
-        for ind in confident_samples:
-            conf_inc += noise_or_not[ind]
-        num_conf += len(confident_samples)
+        for ind in avg_confident_samples:
+            avg_conf_inc += noise_or_not[ind]
+        avg_num_conf += len(avg_confident_samples)
 
-        for ind in unconfident_samples:
-            unconf_inc += noise_or_not[ind]
-        num_unconf += len(unconfident_samples)
+        for ind in avg_unconfident_samples:
+            avg_unconf_inc += noise_or_not[ind]
+        avg_num_unconf += len(avg_unconfident_samples)
+
+        # obtain confidence indexes for thresh metric
+        thresh_confident_ind, thresh_unconfident_ind = thresh_metric(
+            logits, labels, num_classes)
+
+        # calculate how accurate
+        thresh_confident_samples = indexes[thresh_confident_ind]
+        thresh_unconfident_samples = indexes[thresh_unconfident_ind]
+
+        for ind in thresh_confident_samples:
+            thresh_conf_inc += noise_or_not[ind]
+        thresh_num_conf += len(thresh_confident_samples)
+
+        for ind in thresh_unconfident_samples:
+            thresh_unconf_inc += noise_or_not[ind]
+        thresh_num_unconf += len(thresh_unconfident_samples)
 
         prec, _ = accuracy(logits, labels, topk=(1, 5))
         # prec = 0.0
@@ -116,10 +156,19 @@ def train(epoch, train_loader, model, optimizer, num_classes, noise_or_not):
             print('Epoch [%d/%d], Iter [%d/%d] Training Accuracy: %.4F, Loss: %.4f'
                   % (epoch+1, args.n_epoch, i+1, len(train_dataset)//batch_size, prec, loss.data))
 
-    print(f'Confident noise: {conf_inc} out of {num_conf}')
-    print(f'Unconfident noise: {unconf_inc} out of {num_unconf}')
+    print(f'Sum confident noise: {sum_conf_inc} out of {sum_num_conf}')
+    print(f'Sum unconfident noise: {sum_unconf_inc} out of {sum_num_unconf}')
+
+    print(f'Avg confident noise: {avg_conf_inc} out of {avg_num_conf}')
+    print(f'Avg unconfident noise: {avg_unconf_inc} out of {avg_num_unconf}')
+
+    print(
+        f'Thresh confident noise: {thresh_conf_inc} out of {thresh_num_conf}')
+    print(
+        f'Thresh unconfident noise: {thresh_unconf_inc} out of {thresh_num_unconf}')
+
     train_acc = float(train_correct)/float(train_total)
-    return train_acc, conf_inc, num_conf, unconf_inc, num_unconf
+    return train_acc, sum_conf_inc, sum_num_conf, sum_unconf_inc, sum_num_unconf, avg_conf_inc, avg_num_conf, avg_unconf_inc, avg_num_unconf, thresh_conf_inc, thresh_num_conf, thresh_unconf_inc, thresh_num_unconf
 # test
 # Evaluate the Model
 
@@ -205,8 +254,9 @@ for epoch in range(args.n_epoch):
     print(f'epoch {epoch}')
     adjust_learning_rate(optimizer, epoch, alpha_plan)
     model.train()
-    train_acc, conf_inc, num_conf, unconf_inc, num_unconf = train(epoch, train_loader, model,
-                                                                  optimizer, num_classes, noise_or_not)
+    train_acc, sum_conf_inc, sum_num_conf, sum_unconf_inc, sum_num_unconf, avg_conf_inc, avg_num_conf, avg_unconf_inc, avg_num_unconf, thresh_conf_inc, thresh_num_conf, thresh_unconf_inc, thresh_num_unconf = train(
+        epoch, train_loader, model, optimizer, num_classes, noise_or_not)
+
     # evaluate models
     test_acc = evaluate(test_loader=test_loader, model=model)
     if test_acc > max_test:
@@ -218,10 +268,20 @@ for epoch in range(args.n_epoch):
     file.write("\n\ttrain acc on train images is "+str(train_acc)+"\n")
     file.write("\ttest acc on test images is "+str(test_acc)+"\n")
 
-    file.write("\tnum of noisy samples in confident: " +
-               str(conf_inc)+" out of: " + str(num_conf)+"\n")
-    file.write("\tnum of noisy samples in unconfident: " +
-               str(unconf_inc)+" out of: " + str(num_unconf)+"\n")
+    file.write("\t\tSum num of noisy samples in confident: " +
+               str(sum_conf_inc)+" out of: " + str(sum_num_conf)+"\n")
+    file.write("\t\tSum num of noisy samples in unconfident: " +
+               str(sum_unconf_inc)+" out of: " + str(sum_num_unconf)+"\n")
+
+    file.write("\t\tAvg num of noisy samples in confident: " +
+               str(avg_conf_inc)+" out of: " + str(avg_num_conf)+"\n")
+    file.write("\t\tAvg num of noisy samples in unconfident: " +
+               str(avg_unconf_inc)+" out of: " + str(avg_num_unconf)+"\n")
+
+    file.write("\t\tThresh num of noisy samples in confident: " +
+               str(thresh_conf_inc)+" out of: " + str(thresh_num_conf)+"\n")
+    file.write("\t\tThresh num of noisy samples in unconfident: " +
+               str(thresh_unconf_inc)+" out of: " + str(thresh_num_unconf)+"\n")
 
     file.write("\ttest acc on test images is "+str(test_acc)+"\n")
 file.write("\n\nfinal test acc on test images is "+str(test_acc)+"\n")
