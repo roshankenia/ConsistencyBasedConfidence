@@ -245,7 +245,7 @@ train_acc = 0
 
 # training
 file = open('./checkpoint/%s_%s' %
-            (args.dataset, args.noise_type)+'_sum.txt', "w")
+            (args.dataset, args.noise_type)+'_all.txt', "w")
 
 max_test = 0
 
