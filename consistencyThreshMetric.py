@@ -18,17 +18,16 @@ else:
     print('GPU is being properly used')
 
 
-def calculate_confidence(y_pred):
+def calculate_confidence(y_pred, threshold):
     num_samp = len(y_pred)
     confidence = torch.zeros(num_samp).cuda()
     # compute difference score for each pair
     for i in range(num_samp):
         for j in range(num_samp):
             # compute class-wise probability difference
-            confidence[j] += torch.sum(torch.abs(torch.sub(y_pred[i], y_pred[j])))
-
-    # average
-    confidence = confidence/num_samp
+            conf = torch.sum(torch.abs(torch.sub(y_pred[i], y_pred[j])))
+            if conf < 0.3:
+                confidence[j] += 1
     return confidence
 
 

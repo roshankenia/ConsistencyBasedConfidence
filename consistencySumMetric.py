@@ -26,9 +26,6 @@ def calculate_confidence(y_pred):
         for j in range(num_samp):
             # compute class-wise probability difference
             confidence[j] += torch.sum(torch.abs(torch.sub(y_pred[i], y_pred[j])))
-
-    # average
-    confidence = confidence/num_samp
     return confidence
 
 
