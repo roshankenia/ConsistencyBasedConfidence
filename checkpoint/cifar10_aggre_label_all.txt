@@ -364,3 +364,742 @@ epoch: 32
 
 epoch: 33
 	train acc on train images is 81.65561061381074
+	test acc on test images is 84.05
+		Sum num of noisy samples in confident: 427 out of: 36209
+		Sum num of noisy samples in unconfident: 4078 out of: 13791
+		Avg num of noisy samples in confident: 427 out of: 36209
+		Avg num of noisy samples in unconfident: 4078 out of: 13791
+		Thresh num of noisy samples in confident: 4281 out of: 19081
+		Thresh num of noisy samples in unconfident: 224 out of: 30919
+	test acc on test images is 84.05
+
+epoch: 34
+	train acc on train images is 81.64881713554988
+	test acc on test images is 82.33
+		Sum num of noisy samples in confident: 428 out of: 36221
+		Sum num of noisy samples in unconfident: 4077 out of: 13779
+		Avg num of noisy samples in confident: 428 out of: 36221
+		Avg num of noisy samples in unconfident: 4077 out of: 13779
+		Thresh num of noisy samples in confident: 4285 out of: 18921
+		Thresh num of noisy samples in unconfident: 220 out of: 31079
+	test acc on test images is 82.33
+
+epoch: 35
+	train acc on train images is 81.74432544757033
+	test acc on test images is 71.29
+		Sum num of noisy samples in confident: 424 out of: 36229
+		Sum num of noisy samples in unconfident: 4081 out of: 13771
+		Avg num of noisy samples in confident: 424 out of: 36229
+		Avg num of noisy samples in unconfident: 4081 out of: 13771
+		Thresh num of noisy samples in confident: 4297 out of: 19077
+		Thresh num of noisy samples in unconfident: 208 out of: 30923
+	test acc on test images is 71.29
+
+epoch: 36
+	train acc on train images is 82.00967071611254
+	test acc on test images is 77.22
+		Sum num of noisy samples in confident: 433 out of: 36289
+		Sum num of noisy samples in unconfident: 4072 out of: 13711
+		Avg num of noisy samples in confident: 433 out of: 36289
+		Avg num of noisy samples in unconfident: 4072 out of: 13711
+		Thresh num of noisy samples in confident: 4292 out of: 18694
+		Thresh num of noisy samples in unconfident: 213 out of: 31306
+	test acc on test images is 77.22
+
+epoch: 37
+	train acc on train images is 81.94693094629156
+	test acc on test images is 81.98
+		Sum num of noisy samples in confident: 428 out of: 36250
+		Sum num of noisy samples in unconfident: 4077 out of: 13750
+		Avg num of noisy samples in confident: 428 out of: 36250
+		Avg num of noisy samples in unconfident: 4077 out of: 13750
+		Thresh num of noisy samples in confident: 4283 out of: 18811
+		Thresh num of noisy samples in unconfident: 222 out of: 31189
+	test acc on test images is 81.98
+
+epoch: 38
+	train acc on train images is 82.04683503836317
+	test acc on test images is 82.56
+		Sum num of noisy samples in confident: 439 out of: 36296
+		Sum num of noisy samples in unconfident: 4066 out of: 13704
+		Avg num of noisy samples in confident: 439 out of: 36296
+		Avg num of noisy samples in unconfident: 4066 out of: 13704
+		Thresh num of noisy samples in confident: 4287 out of: 18875
+		Thresh num of noisy samples in unconfident: 218 out of: 31125
+	test acc on test images is 82.56
+
+epoch: 39
+	train acc on train images is 82.08959398976982
+	test acc on test images is 83.95
+		Sum num of noisy samples in confident: 425 out of: 36361
+		Sum num of noisy samples in unconfident: 4080 out of: 13639
+		Avg num of noisy samples in confident: 425 out of: 36361
+		Avg num of noisy samples in unconfident: 4080 out of: 13639
+		Thresh num of noisy samples in confident: 4314 out of: 18823
+		Thresh num of noisy samples in unconfident: 191 out of: 31177
+	test acc on test images is 83.95
+
+epoch: 40
+	train acc on train images is 82.1639226342711
+	test acc on test images is 82.47
+		Sum num of noisy samples in confident: 432 out of: 36361
+		Sum num of noisy samples in unconfident: 4073 out of: 13639
+		Avg num of noisy samples in confident: 432 out of: 36361
+		Avg num of noisy samples in unconfident: 4073 out of: 13639
+		Thresh num of noisy samples in confident: 4291 out of: 18749
+		Thresh num of noisy samples in unconfident: 214 out of: 31251
+	test acc on test images is 82.47
+
+epoch: 41
+	train acc on train images is 81.84902493606138
+	test acc on test images is 82.39
+		Sum num of noisy samples in confident: 435 out of: 36251
+		Sum num of noisy samples in unconfident: 4070 out of: 13749
+		Avg num of noisy samples in confident: 435 out of: 36251
+		Avg num of noisy samples in unconfident: 4070 out of: 13749
+		Thresh num of noisy samples in confident: 4279 out of: 18759
+		Thresh num of noisy samples in unconfident: 226 out of: 31241
+	test acc on test images is 82.39
+
+epoch: 42
+	train acc on train images is 81.8837915601023
+	test acc on test images is 80.91
+		Sum num of noisy samples in confident: 437 out of: 36342
+		Sum num of noisy samples in unconfident: 4068 out of: 13658
+		Avg num of noisy samples in confident: 437 out of: 36342
+		Avg num of noisy samples in unconfident: 4068 out of: 13658
+		Thresh num of noisy samples in confident: 4293 out of: 18741
+		Thresh num of noisy samples in unconfident: 212 out of: 31259
+	test acc on test images is 80.91
+
+epoch: 43
+	train acc on train images is 82.15393222506394
+	test acc on test images is 82.7
+		Sum num of noisy samples in confident: 417 out of: 36374
+		Sum num of noisy samples in unconfident: 4088 out of: 13626
+		Avg num of noisy samples in confident: 417 out of: 36374
+		Avg num of noisy samples in unconfident: 4088 out of: 13626
+		Thresh num of noisy samples in confident: 4287 out of: 18623
+		Thresh num of noisy samples in unconfident: 218 out of: 31377
+	test acc on test images is 82.7
+
+epoch: 44
+	train acc on train images is 82.06761508951406
+	test acc on test images is 81.84
+		Sum num of noisy samples in confident: 418 out of: 36374
+		Sum num of noisy samples in unconfident: 4087 out of: 13626
+		Avg num of noisy samples in confident: 418 out of: 36374
+		Avg num of noisy samples in unconfident: 4087 out of: 13626
+		Thresh num of noisy samples in confident: 4291 out of: 18568
+		Thresh num of noisy samples in unconfident: 214 out of: 31432
+	test acc on test images is 81.84
+
+epoch: 45
+	train acc on train images is 82.43286445012788
+	test acc on test images is 83.44
+		Sum num of noisy samples in confident: 433 out of: 36413
+		Sum num of noisy samples in unconfident: 4072 out of: 13587
+		Avg num of noisy samples in confident: 433 out of: 36413
+		Avg num of noisy samples in unconfident: 4072 out of: 13587
+		Thresh num of noisy samples in confident: 4311 out of: 18572
+		Thresh num of noisy samples in unconfident: 194 out of: 31428
+	test acc on test images is 83.44
+
+epoch: 46
+	train acc on train images is 82.39769820971867
+	test acc on test images is 82.93
+		Sum num of noisy samples in confident: 421 out of: 36412
+		Sum num of noisy samples in unconfident: 4084 out of: 13588
+		Avg num of noisy samples in confident: 421 out of: 36412
+		Avg num of noisy samples in unconfident: 4084 out of: 13588
+		Thresh num of noisy samples in confident: 4291 out of: 18607
+		Thresh num of noisy samples in unconfident: 214 out of: 31393
+	test acc on test images is 82.93
+
+epoch: 47
+	train acc on train images is 82.30418797953965
+	test acc on test images is 78.43
+		Sum num of noisy samples in confident: 426 out of: 36395
+		Sum num of noisy samples in unconfident: 4079 out of: 13605
+		Avg num of noisy samples in confident: 426 out of: 36395
+		Avg num of noisy samples in unconfident: 4079 out of: 13605
+		Thresh num of noisy samples in confident: 4295 out of: 18541
+		Thresh num of noisy samples in unconfident: 210 out of: 31459
+	test acc on test images is 78.43
+
+epoch: 48
+	train acc on train images is 82.45564258312021
+	test acc on test images is 79.2
+		Sum num of noisy samples in confident: 424 out of: 36419
+		Sum num of noisy samples in unconfident: 4081 out of: 13581
+		Avg num of noisy samples in confident: 424 out of: 36419
+		Avg num of noisy samples in unconfident: 4081 out of: 13581
+		Thresh num of noisy samples in confident: 4282 out of: 18543
+		Thresh num of noisy samples in unconfident: 223 out of: 31457
+	test acc on test images is 79.2
+
+epoch: 49
+	train acc on train images is 82.2406489769821
+	test acc on test images is 81.5
+		Sum num of noisy samples in confident: 405 out of: 36458
+		Sum num of noisy samples in unconfident: 4100 out of: 13542
+		Avg num of noisy samples in confident: 405 out of: 36458
+		Avg num of noisy samples in unconfident: 4100 out of: 13542
+		Thresh num of noisy samples in confident: 4307 out of: 18603
+		Thresh num of noisy samples in unconfident: 198 out of: 31397
+	test acc on test images is 81.5
+
+epoch: 50
+	train acc on train images is 82.36013427109974
+	test acc on test images is 81.06
+		Sum num of noisy samples in confident: 380 out of: 36430
+		Sum num of noisy samples in unconfident: 4125 out of: 13570
+		Avg num of noisy samples in confident: 380 out of: 36430
+		Avg num of noisy samples in unconfident: 4125 out of: 13570
+		Thresh num of noisy samples in confident: 4320 out of: 18628
+		Thresh num of noisy samples in unconfident: 185 out of: 31372
+	test acc on test images is 81.06
+
+epoch: 51
+	train acc on train images is 82.5707320971867
+	test acc on test images is 78.2
+		Sum num of noisy samples in confident: 434 out of: 36609
+		Sum num of noisy samples in unconfident: 4071 out of: 13391
+		Avg num of noisy samples in confident: 434 out of: 36609
+		Avg num of noisy samples in unconfident: 4071 out of: 13391
+		Thresh num of noisy samples in confident: 4281 out of: 18365
+		Thresh num of noisy samples in unconfident: 224 out of: 31635
+	test acc on test images is 78.2
+
+epoch: 52
+	train acc on train images is 82.58431905370844
+	test acc on test images is 79.9
+		Sum num of noisy samples in confident: 407 out of: 36553
+		Sum num of noisy samples in unconfident: 4098 out of: 13447
+		Avg num of noisy samples in confident: 407 out of: 36553
+		Avg num of noisy samples in unconfident: 4098 out of: 13447
+		Thresh num of noisy samples in confident: 4299 out of: 18288
+		Thresh num of noisy samples in unconfident: 206 out of: 31712
+	test acc on test images is 79.9
+
+epoch: 53
+	train acc on train images is 82.49760230179028
+	test acc on test images is 83.96
+		Sum num of noisy samples in confident: 430 out of: 36439
+		Sum num of noisy samples in unconfident: 4075 out of: 13561
+		Avg num of noisy samples in confident: 430 out of: 36439
+		Avg num of noisy samples in unconfident: 4075 out of: 13561
+		Thresh num of noisy samples in confident: 4301 out of: 18450
+		Thresh num of noisy samples in unconfident: 204 out of: 31550
+	test acc on test images is 83.96
+
+epoch: 54
+	train acc on train images is 82.71579283887468
+	test acc on test images is 80.56
+		Sum num of noisy samples in confident: 427 out of: 36545
+		Sum num of noisy samples in unconfident: 4078 out of: 13455
+		Avg num of noisy samples in confident: 427 out of: 36545
+		Avg num of noisy samples in unconfident: 4078 out of: 13455
+		Thresh num of noisy samples in confident: 4279 out of: 18287
+		Thresh num of noisy samples in unconfident: 226 out of: 31713
+	test acc on test images is 80.56
+
+epoch: 55
+	train acc on train images is 82.42167519181585
+	test acc on test images is 82.23
+		Sum num of noisy samples in confident: 437 out of: 36422
+		Sum num of noisy samples in unconfident: 4068 out of: 13578
+		Avg num of noisy samples in confident: 437 out of: 36422
+		Avg num of noisy samples in unconfident: 4068 out of: 13578
+		Thresh num of noisy samples in confident: 4265 out of: 18481
+		Thresh num of noisy samples in unconfident: 240 out of: 31519
+	test acc on test images is 82.23
+
+epoch: 56
+	train acc on train images is 82.65784846547315
+	test acc on test images is 84.86
+		Sum num of noisy samples in confident: 413 out of: 36566
+		Sum num of noisy samples in unconfident: 4092 out of: 13434
+		Avg num of noisy samples in confident: 413 out of: 36566
+		Avg num of noisy samples in unconfident: 4092 out of: 13434
+		Thresh num of noisy samples in confident: 4300 out of: 18103
+		Thresh num of noisy samples in unconfident: 205 out of: 31897
+	test acc on test images is 84.86
+
+epoch: 57
+	train acc on train images is 82.61588874680307
+	test acc on test images is 83.28
+		Sum num of noisy samples in confident: 442 out of: 36528
+		Sum num of noisy samples in unconfident: 4063 out of: 13472
+		Avg num of noisy samples in confident: 442 out of: 36528
+		Avg num of noisy samples in unconfident: 4063 out of: 13472
+		Thresh num of noisy samples in confident: 4283 out of: 18224
+		Thresh num of noisy samples in unconfident: 222 out of: 31776
+	test acc on test images is 83.28
+
+epoch: 58
+	train acc on train images is 82.61948529411765
+	test acc on test images is 81.66
+		Sum num of noisy samples in confident: 445 out of: 36551
+		Sum num of noisy samples in unconfident: 4060 out of: 13449
+		Avg num of noisy samples in confident: 445 out of: 36551
+		Avg num of noisy samples in unconfident: 4060 out of: 13449
+		Thresh num of noisy samples in confident: 4298 out of: 18412
+		Thresh num of noisy samples in unconfident: 207 out of: 31588
+	test acc on test images is 81.66
+
+epoch: 59
+	train acc on train images is 82.68901854219949
+	test acc on test images is 84.01
+		Sum num of noisy samples in confident: 401 out of: 36498
+		Sum num of noisy samples in unconfident: 4104 out of: 13502
+		Avg num of noisy samples in confident: 401 out of: 36498
+		Avg num of noisy samples in unconfident: 4104 out of: 13502
+		Thresh num of noisy samples in confident: 4277 out of: 18338
+		Thresh num of noisy samples in unconfident: 228 out of: 31662
+	test acc on test images is 84.01
+
+epoch: 60
+	train acc on train images is 87.5855179028133
+	test acc on test images is 91.31
+		Sum num of noisy samples in confident: 330 out of: 38199
+		Sum num of noisy samples in unconfident: 4175 out of: 11801
+		Avg num of noisy samples in confident: 330 out of: 38199
+		Avg num of noisy samples in unconfident: 4175 out of: 11801
+		Thresh num of noisy samples in confident: 4309 out of: 14304
+		Thresh num of noisy samples in unconfident: 196 out of: 35696
+	test acc on test images is 91.31
+
+epoch: 61
+	train acc on train images is 89.04451726342711
+	test acc on test images is 91.79
+		Sum num of noisy samples in confident: 348 out of: 38872
+		Sum num of noisy samples in unconfident: 4157 out of: 11128
+		Avg num of noisy samples in confident: 348 out of: 38872
+		Avg num of noisy samples in unconfident: 4157 out of: 11128
+		Thresh num of noisy samples in confident: 4298 out of: 12983
+		Thresh num of noisy samples in unconfident: 207 out of: 37017
+	test acc on test images is 91.79
+
+epoch: 62
+	train acc on train images is 89.97562340153452
+	test acc on test images is 91.34
+		Sum num of noisy samples in confident: 398 out of: 39083
+		Sum num of noisy samples in unconfident: 4107 out of: 10917
+		Avg num of noisy samples in confident: 398 out of: 39083
+		Avg num of noisy samples in unconfident: 4107 out of: 10917
+		Thresh num of noisy samples in confident: 4241 out of: 12419
+		Thresh num of noisy samples in unconfident: 264 out of: 37581
+	test acc on test images is 91.34
+
+epoch: 63
+	train acc on train images is 90.22538363171356
+	test acc on test images is 91.45
+		Sum num of noisy samples in confident: 416 out of: 39142
+		Sum num of noisy samples in unconfident: 4089 out of: 10858
+		Avg num of noisy samples in confident: 416 out of: 39142
+		Avg num of noisy samples in unconfident: 4089 out of: 10858
+		Thresh num of noisy samples in confident: 4187 out of: 12444
+		Thresh num of noisy samples in unconfident: 318 out of: 37556
+	test acc on test images is 91.45
+
+epoch: 64
+	train acc on train images is 90.78564578005115
+	test acc on test images is 91.36
+		Sum num of noisy samples in confident: 460 out of: 39392
+		Sum num of noisy samples in unconfident: 4045 out of: 10608
+		Avg num of noisy samples in confident: 460 out of: 39392
+		Avg num of noisy samples in unconfident: 4045 out of: 10608
+		Thresh num of noisy samples in confident: 4130 out of: 11718
+		Thresh num of noisy samples in unconfident: 375 out of: 38282
+	test acc on test images is 91.36
+
+epoch: 65
+	train acc on train images is 91.18406329923273
+	test acc on test images is 91.48
+		Sum num of noisy samples in confident: 532 out of: 39556
+		Sum num of noisy samples in unconfident: 3973 out of: 10444
+		Avg num of noisy samples in confident: 532 out of: 39556
+		Avg num of noisy samples in unconfident: 3973 out of: 10444
+		Thresh num of noisy samples in confident: 4067 out of: 11464
+		Thresh num of noisy samples in unconfident: 438 out of: 38536
+	test acc on test images is 91.48
+
+epoch: 66
+	train acc on train images is 91.62803708439898
+	test acc on test images is 91.19
+		Sum num of noisy samples in confident: 581 out of: 39632
+		Sum num of noisy samples in unconfident: 3924 out of: 10368
+		Avg num of noisy samples in confident: 581 out of: 39632
+		Avg num of noisy samples in unconfident: 3924 out of: 10368
+		Thresh num of noisy samples in confident: 4011 out of: 11243
+		Thresh num of noisy samples in unconfident: 494 out of: 38757
+	test acc on test images is 91.19
+
+epoch: 67
+	train acc on train images is 91.94493286445012
+	test acc on test images is 90.6
+		Sum num of noisy samples in confident: 647 out of: 39816
+		Sum num of noisy samples in unconfident: 3858 out of: 10184
+		Avg num of noisy samples in confident: 647 out of: 39816
+		Avg num of noisy samples in unconfident: 3858 out of: 10184
+		Thresh num of noisy samples in confident: 3930 out of: 10951
+		Thresh num of noisy samples in unconfident: 575 out of: 39049
+	test acc on test images is 90.6
+
+epoch: 68
+	train acc on train images is 92.18550191815856
+	test acc on test images is 90.17
+		Sum num of noisy samples in confident: 713 out of: 39768
+		Sum num of noisy samples in unconfident: 3792 out of: 10232
+		Avg num of noisy samples in confident: 713 out of: 39768
+		Avg num of noisy samples in unconfident: 3792 out of: 10232
+		Thresh num of noisy samples in confident: 3848 out of: 10862
+		Thresh num of noisy samples in unconfident: 657 out of: 39138
+	test acc on test images is 90.17
+
+epoch: 69
+	train acc on train images is 92.33136189258312
+	test acc on test images is 90.46
+		Sum num of noisy samples in confident: 778 out of: 39863
+		Sum num of noisy samples in unconfident: 3727 out of: 10137
+		Avg num of noisy samples in confident: 778 out of: 39863
+		Avg num of noisy samples in unconfident: 3727 out of: 10137
+		Thresh num of noisy samples in confident: 3758 out of: 10924
+		Thresh num of noisy samples in unconfident: 747 out of: 39076
+	test acc on test images is 90.46
+
+epoch: 70
+	train acc on train images is 92.58032289002557
+	test acc on test images is 90.32
+		Sum num of noisy samples in confident: 814 out of: 39854
+		Sum num of noisy samples in unconfident: 3691 out of: 10146
+		Avg num of noisy samples in confident: 814 out of: 39854
+		Avg num of noisy samples in unconfident: 3691 out of: 10146
+		Thresh num of noisy samples in confident: 3708 out of: 10781
+		Thresh num of noisy samples in unconfident: 797 out of: 39219
+	test acc on test images is 90.32
+
+epoch: 71
+	train acc on train images is 92.83967391304348
+	test acc on test images is 90.63
+		Sum num of noisy samples in confident: 904 out of: 40001
+		Sum num of noisy samples in unconfident: 3601 out of: 9999
+		Avg num of noisy samples in confident: 904 out of: 40001
+		Avg num of noisy samples in unconfident: 3601 out of: 9999
+		Thresh num of noisy samples in confident: 3563 out of: 10446
+		Thresh num of noisy samples in unconfident: 942 out of: 39554
+	test acc on test images is 90.63
+
+epoch: 72
+	train acc on train images is 92.98833120204604
+	test acc on test images is 89.64
+		Sum num of noisy samples in confident: 961 out of: 40000
+		Sum num of noisy samples in unconfident: 3544 out of: 10000
+		Avg num of noisy samples in confident: 961 out of: 40000
+		Avg num of noisy samples in unconfident: 3544 out of: 10000
+		Thresh num of noisy samples in confident: 3499 out of: 10428
+		Thresh num of noisy samples in unconfident: 1006 out of: 39572
+	test acc on test images is 89.64
+
+epoch: 73
+	train acc on train images is 93.13658887468031
+	test acc on test images is 88.93
+		Sum num of noisy samples in confident: 1001 out of: 40133
+		Sum num of noisy samples in unconfident: 3504 out of: 9867
+		Avg num of noisy samples in confident: 1001 out of: 40133
+		Avg num of noisy samples in unconfident: 3504 out of: 9867
+		Thresh num of noisy samples in confident: 3463 out of: 10359
+		Thresh num of noisy samples in unconfident: 1042 out of: 39641
+	test acc on test images is 88.93
+
+epoch: 74
+	train acc on train images is 93.35717710997443
+	test acc on test images is 88.59
+		Sum num of noisy samples in confident: 1052 out of: 40247
+		Sum num of noisy samples in unconfident: 3453 out of: 9753
+		Avg num of noisy samples in confident: 1052 out of: 40247
+		Avg num of noisy samples in unconfident: 3453 out of: 9753
+		Thresh num of noisy samples in confident: 3382 out of: 10276
+		Thresh num of noisy samples in unconfident: 1123 out of: 39724
+	test acc on test images is 88.59
+
+epoch: 75
+	train acc on train images is 93.59255115089515
+	test acc on test images is 88.7
+		Sum num of noisy samples in confident: 1085 out of: 40233
+		Sum num of noisy samples in unconfident: 3420 out of: 9767
+		Avg num of noisy samples in confident: 1085 out of: 40233
+		Avg num of noisy samples in unconfident: 3420 out of: 9767
+		Thresh num of noisy samples in confident: 3358 out of: 10257
+		Thresh num of noisy samples in unconfident: 1147 out of: 39743
+	test acc on test images is 88.7
+
+epoch: 76
+	train acc on train images is 93.55938299232737
+	test acc on test images is 88.9
+		Sum num of noisy samples in confident: 1137 out of: 40250
+		Sum num of noisy samples in unconfident: 3368 out of: 9750
+		Avg num of noisy samples in confident: 1137 out of: 40250
+		Avg num of noisy samples in unconfident: 3368 out of: 9750
+		Thresh num of noisy samples in confident: 3270 out of: 10009
+		Thresh num of noisy samples in unconfident: 1235 out of: 39991
+	test acc on test images is 88.9
+
+epoch: 77
+	train acc on train images is 93.65129475703324
+	test acc on test images is 87.93
+		Sum num of noisy samples in confident: 1161 out of: 40292
+		Sum num of noisy samples in unconfident: 3344 out of: 9708
+		Avg num of noisy samples in confident: 1161 out of: 40292
+		Avg num of noisy samples in unconfident: 3344 out of: 9708
+		Thresh num of noisy samples in confident: 3277 out of: 10083
+		Thresh num of noisy samples in unconfident: 1228 out of: 39917
+	test acc on test images is 87.93
+
+epoch: 78
+	train acc on train images is 93.57416879795396
+	test acc on test images is 88.74
+		Sum num of noisy samples in confident: 1215 out of: 40220
+		Sum num of noisy samples in unconfident: 3290 out of: 9780
+		Avg num of noisy samples in confident: 1215 out of: 40220
+		Avg num of noisy samples in unconfident: 3290 out of: 9780
+		Thresh num of noisy samples in confident: 3191 out of: 9656
+		Thresh num of noisy samples in unconfident: 1314 out of: 40344
+	test acc on test images is 88.74
+
+epoch: 79
+	train acc on train images is 93.747202685422
+	test acc on test images is 87.39
+		Sum num of noisy samples in confident: 1229 out of: 40325
+		Sum num of noisy samples in unconfident: 3276 out of: 9675
+		Avg num of noisy samples in confident: 1229 out of: 40325
+		Avg num of noisy samples in unconfident: 3276 out of: 9675
+		Thresh num of noisy samples in confident: 3149 out of: 9804
+		Thresh num of noisy samples in unconfident: 1356 out of: 40196
+	test acc on test images is 87.39
+
+epoch: 80
+	train acc on train images is 93.93022698209718
+	test acc on test images is 87.52
+		Sum num of noisy samples in confident: 1279 out of: 40259
+		Sum num of noisy samples in unconfident: 3226 out of: 9741
+		Avg num of noisy samples in confident: 1279 out of: 40259
+		Avg num of noisy samples in unconfident: 3226 out of: 9741
+		Thresh num of noisy samples in confident: 3145 out of: 10026
+		Thresh num of noisy samples in unconfident: 1360 out of: 39974
+	test acc on test images is 87.52
+
+epoch: 81
+	train acc on train images is 93.83072250639387
+	test acc on test images is 88.0
+		Sum num of noisy samples in confident: 1252 out of: 40408
+		Sum num of noisy samples in unconfident: 3253 out of: 9592
+		Avg num of noisy samples in confident: 1252 out of: 40408
+		Avg num of noisy samples in unconfident: 3253 out of: 9592
+		Thresh num of noisy samples in confident: 3093 out of: 9834
+		Thresh num of noisy samples in unconfident: 1412 out of: 40166
+	test acc on test images is 88.0
+
+epoch: 82
+	train acc on train images is 94.00455562659846
+	test acc on test images is 88.18
+		Sum num of noisy samples in confident: 1303 out of: 40429
+		Sum num of noisy samples in unconfident: 3202 out of: 9571
+		Avg num of noisy samples in confident: 1303 out of: 40429
+		Avg num of noisy samples in unconfident: 3202 out of: 9571
+		Thresh num of noisy samples in confident: 3059 out of: 9678
+		Thresh num of noisy samples in unconfident: 1446 out of: 40322
+	test acc on test images is 88.18
+
+epoch: 83
+	train acc on train images is 94.07928388746804
+	test acc on test images is 89.15
+		Sum num of noisy samples in confident: 1342 out of: 40456
+		Sum num of noisy samples in unconfident: 3163 out of: 9544
+		Avg num of noisy samples in confident: 1342 out of: 40456
+		Avg num of noisy samples in unconfident: 3163 out of: 9544
+		Thresh num of noisy samples in confident: 3029 out of: 9756
+		Thresh num of noisy samples in unconfident: 1476 out of: 40244
+	test acc on test images is 89.15
+
+epoch: 84
+	train acc on train images is 94.15960677749361
+	test acc on test images is 87.92
+		Sum num of noisy samples in confident: 1365 out of: 40427
+		Sum num of noisy samples in unconfident: 3140 out of: 9573
+		Avg num of noisy samples in confident: 1365 out of: 40427
+		Avg num of noisy samples in unconfident: 3140 out of: 9573
+		Thresh num of noisy samples in confident: 2977 out of: 9594
+		Thresh num of noisy samples in unconfident: 1528 out of: 40406
+	test acc on test images is 87.92
+
+epoch: 85
+	train acc on train images is 94.27709398976982
+	test acc on test images is 87.38
+		Sum num of noisy samples in confident: 1401 out of: 40426
+		Sum num of noisy samples in unconfident: 3104 out of: 9574
+		Avg num of noisy samples in confident: 1401 out of: 40426
+		Avg num of noisy samples in unconfident: 3104 out of: 9574
+		Thresh num of noisy samples in confident: 2902 out of: 9686
+		Thresh num of noisy samples in unconfident: 1603 out of: 40314
+	test acc on test images is 87.38
+
+epoch: 86
+	train acc on train images is 94.34462915601023
+	test acc on test images is 87.55
+		Sum num of noisy samples in confident: 1436 out of: 40433
+		Sum num of noisy samples in unconfident: 3069 out of: 9567
+		Avg num of noisy samples in confident: 1436 out of: 40433
+		Avg num of noisy samples in unconfident: 3069 out of: 9567
+		Thresh num of noisy samples in confident: 2891 out of: 9355
+		Thresh num of noisy samples in unconfident: 1614 out of: 40645
+	test acc on test images is 87.55
+
+epoch: 87
+	train acc on train images is 94.27989130434783
+	test acc on test images is 85.98
+		Sum num of noisy samples in confident: 1422 out of: 40418
+		Sum num of noisy samples in unconfident: 3083 out of: 9582
+		Avg num of noisy samples in confident: 1422 out of: 40418
+		Avg num of noisy samples in unconfident: 3083 out of: 9582
+		Thresh num of noisy samples in confident: 2897 out of: 9902
+		Thresh num of noisy samples in unconfident: 1608 out of: 40098
+	test acc on test images is 85.98
+
+epoch: 88
+	train acc on train images is 94.54084079283888
+	test acc on test images is 87.36
+		Sum num of noisy samples in confident: 1460 out of: 40464
+		Sum num of noisy samples in unconfident: 3045 out of: 9536
+		Avg num of noisy samples in confident: 1460 out of: 40464
+		Avg num of noisy samples in unconfident: 3045 out of: 9536
+		Thresh num of noisy samples in confident: 2845 out of: 9805
+		Thresh num of noisy samples in unconfident: 1660 out of: 40195
+	test acc on test images is 87.36
+
+epoch: 89
+	train acc on train images is 94.65872762148338
+	test acc on test images is 86.32
+		Sum num of noisy samples in confident: 1484 out of: 40558
+		Sum num of noisy samples in unconfident: 3021 out of: 9442
+		Avg num of noisy samples in confident: 1484 out of: 40558
+		Avg num of noisy samples in unconfident: 3021 out of: 9442
+		Thresh num of noisy samples in confident: 2798 out of: 9694
+		Thresh num of noisy samples in unconfident: 1707 out of: 40306
+	test acc on test images is 86.32
+
+epoch: 90
+	train acc on train images is 94.75343670076727
+	test acc on test images is 86.86
+		Sum num of noisy samples in confident: 1495 out of: 40667
+		Sum num of noisy samples in unconfident: 3010 out of: 9333
+		Avg num of noisy samples in confident: 1495 out of: 40667
+		Avg num of noisy samples in unconfident: 3010 out of: 9333
+		Thresh num of noisy samples in confident: 2785 out of: 9459
+		Thresh num of noisy samples in unconfident: 1720 out of: 40541
+	test acc on test images is 86.86
+
+epoch: 91
+	train acc on train images is 94.71427429667519
+	test acc on test images is 85.63
+		Sum num of noisy samples in confident: 1543 out of: 40498
+		Sum num of noisy samples in unconfident: 2962 out of: 9502
+		Avg num of noisy samples in confident: 1543 out of: 40498
+		Avg num of noisy samples in unconfident: 2962 out of: 9502
+		Thresh num of noisy samples in confident: 2770 out of: 9621
+		Thresh num of noisy samples in unconfident: 1735 out of: 40379
+	test acc on test images is 85.63
+
+epoch: 92
+	train acc on train images is 94.70308503836317
+	test acc on test images is 86.89
+		Sum num of noisy samples in confident: 1526 out of: 40590
+		Sum num of noisy samples in unconfident: 2979 out of: 9410
+		Avg num of noisy samples in confident: 1526 out of: 40590
+		Avg num of noisy samples in unconfident: 2979 out of: 9410
+		Thresh num of noisy samples in confident: 2797 out of: 9706
+		Thresh num of noisy samples in unconfident: 1708 out of: 40294
+	test acc on test images is 86.89
+
+epoch: 93
+	train acc on train images is 94.93925831202046
+	test acc on test images is 88.55
+		Sum num of noisy samples in confident: 1544 out of: 40533
+		Sum num of noisy samples in unconfident: 2961 out of: 9467
+		Avg num of noisy samples in confident: 1544 out of: 40533
+		Avg num of noisy samples in unconfident: 2961 out of: 9467
+		Thresh num of noisy samples in confident: 2711 out of: 9570
+		Thresh num of noisy samples in unconfident: 1794 out of: 40430
+	test acc on test images is 88.55
+
+epoch: 94
+	train acc on train images is 95.0119884910486
+	test acc on test images is 87.49
+		Sum num of noisy samples in confident: 1586 out of: 40729
+		Sum num of noisy samples in unconfident: 2919 out of: 9271
+		Avg num of noisy samples in confident: 1586 out of: 40729
+		Avg num of noisy samples in unconfident: 2919 out of: 9271
+		Thresh num of noisy samples in confident: 2685 out of: 9746
+		Thresh num of noisy samples in unconfident: 1820 out of: 40254
+	test acc on test images is 87.49
+
+epoch: 95
+	train acc on train images is 94.96962915601023
+	test acc on test images is 85.64
+		Sum num of noisy samples in confident: 1571 out of: 40659
+		Sum num of noisy samples in unconfident: 2934 out of: 9341
+		Avg num of noisy samples in confident: 1571 out of: 40659
+		Avg num of noisy samples in unconfident: 2934 out of: 9341
+		Thresh num of noisy samples in confident: 2677 out of: 9562
+		Thresh num of noisy samples in unconfident: 1828 out of: 40438
+	test acc on test images is 85.64
+
+epoch: 96
+	train acc on train images is 95.06633631713555
+	test acc on test images is 86.6
+		Sum num of noisy samples in confident: 1631 out of: 40654
+		Sum num of noisy samples in unconfident: 2874 out of: 9346
+		Avg num of noisy samples in confident: 1631 out of: 40654
+		Avg num of noisy samples in unconfident: 2874 out of: 9346
+		Thresh num of noisy samples in confident: 2629 out of: 9737
+		Thresh num of noisy samples in unconfident: 1876 out of: 40263
+	test acc on test images is 86.6
+
+epoch: 97
+	train acc on train images is 95.04955242966751
+	test acc on test images is 87.56
+		Sum num of noisy samples in confident: 1622 out of: 40625
+		Sum num of noisy samples in unconfident: 2883 out of: 9375
+		Avg num of noisy samples in confident: 1622 out of: 40625
+		Avg num of noisy samples in unconfident: 2883 out of: 9375
+		Thresh num of noisy samples in confident: 2577 out of: 9380
+		Thresh num of noisy samples in unconfident: 1928 out of: 40620
+	test acc on test images is 87.56
+
+epoch: 98
+	train acc on train images is 95.1946131713555
+	test acc on test images is 86.01
+		Sum num of noisy samples in confident: 1678 out of: 40713
+		Sum num of noisy samples in unconfident: 2827 out of: 9287
+		Avg num of noisy samples in confident: 1678 out of: 40713
+		Avg num of noisy samples in unconfident: 2827 out of: 9287
+		Thresh num of noisy samples in confident: 2518 out of: 9774
+		Thresh num of noisy samples in unconfident: 1987 out of: 40226
+	test acc on test images is 86.01
+
+epoch: 99
+	train acc on train images is 95.47274616368287
+	test acc on test images is 86.91
+		Sum num of noisy samples in confident: 1657 out of: 40824
+		Sum num of noisy samples in unconfident: 2848 out of: 9176
+		Avg num of noisy samples in confident: 1657 out of: 40824
+		Avg num of noisy samples in unconfident: 2848 out of: 9176
+		Thresh num of noisy samples in confident: 2549 out of: 9692
+		Thresh num of noisy samples in unconfident: 1956 out of: 40308
+	test acc on test images is 86.91
+
+
+final test acc on test images is 86.91
+max test acc on test images is 91.79
+Total runtime of the program is: 06:30:21
