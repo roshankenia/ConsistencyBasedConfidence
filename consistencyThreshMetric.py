@@ -26,10 +26,10 @@ def calculate_confidence(y_pred, threshold):
         for j in range(num_samp):
             # compute class-wise probability difference
             conf = torch.sum(torch.abs(torch.sub(y_pred[i], y_pred[j])))
-            print(conf, end =" ")
+            # print(conf, end =" ")
             if conf < 0.3:
                 confidence[j] += 1
-    print()
+    # print()
     return confidence
 
 
