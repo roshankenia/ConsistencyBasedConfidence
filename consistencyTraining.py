@@ -155,6 +155,8 @@ def train(epoch, train_loader, model, optimizer, num_classes, noise_or_not):
         print('pseudo:', unconf_pseudolabels)
 
         # heavily augment images
+        print('images unconf 1:', images_unconf)
+        print('images unconf 2:', images[sum_unconfident_ind])
         aug_images = randAugment(images_unconf)
         aug_images = Variable(aug_images).cuda()
 
