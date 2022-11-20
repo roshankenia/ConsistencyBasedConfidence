@@ -93,9 +93,6 @@ def train(epoch, train_loader, model, optimizer, num_classes, noise_or_not, trai
 
     for i, (images, labels, indexes) in enumerate(train_loader):
         ind = indexes.cpu().numpy().transpose()
-
-        print('indexes:', indexes)
-        print('ind:', ind)
         batch_size = len(ind)
 
         images = images.cuda()
@@ -146,22 +143,25 @@ def train(epoch, train_loader, model, optimizer, num_classes, noise_or_not, trai
         print('pseudo:', unconf_pseudolabels)
 
         # heavily augment images
-        print('unconf act ind:', sum_unconfident_samples)
         aug_images = []
         for index in sum_unconfident_samples:
             aug_images.append(train_dataset.getItemRandAug(index))
         aug_images = torch.stack(aug_images).cuda()
 
-        print('images unconf 1:', aug_images)
-        print('images unconf 2:', images[sum_unconfident_ind])
-
         # predict on heavily augmented
         aug_logits = model(aug_images)
+
+        print('aug_logits:', aug_logits)
         # unconf loss
         unconf_loss = F.cross_entropy(
             aug_logits, unconf_pseudolabels, reduce=True)
 
         # training accuracy
+        print('logits_conf shape:', logits_conf.shape)
+        print('conf_targets_a shape:', conf_targets_a.shape)
+
+        print('aug_logits shape:', aug_logits.shape)
+        print('unconf_pseudolabels shape:', unconf_pseudolabels.shape)
         prec_a, _ = accuracy(logits_conf, conf_targets_a, topk=(1, 5))
         prec_b, _ = accuracy(logits_conf, conf_targets_b, topk=(1, 5))
         prec_u = accuracy(aug_logits, unconf_pseudolabels, topk=(1, 5))
