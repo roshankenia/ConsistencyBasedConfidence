@@ -102,6 +102,8 @@ def train(epoch, train_loader, model, optimizer, num_classes, noise_or_not):
         ind = indexes.cpu().numpy().transpose()
         batch_size = len(ind)
 
+        img_cpy = images
+
         images = Variable(images).cuda()
         labels = Variable(labels).cuda()
 
@@ -145,10 +147,10 @@ def train(epoch, train_loader, model, optimizer, num_classes, noise_or_not):
         # get unconf
         logits_unconf = logits[sum_unconfident_ind]
         labels_unconf = labels[sum_unconfident_ind]
-        images_unconf = images[sum_unconfident_ind]
+        images_unconf = img_cpy[sum_unconfident_ind]
         # create pseudolabels based on logits on lightly augmented images for unconfident set
         unconf_pseudolabels = torch.argmax(logits_unconf, dim=1)
-
+        print('logits unconf:', logits_unconf)
         print('orig labels:', labels_unconf)
         print('pseudo:', unconf_pseudolabels)
 
