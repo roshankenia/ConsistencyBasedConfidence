@@ -102,7 +102,7 @@ def train(epoch, train_loader, model, optimizer, num_classes, noise_or_not):
         ind = indexes.cpu().numpy().transpose()
         batch_size = len(ind)
 
-        img_cpy = images
+        img_cpy = images.copy()
 
         images = Variable(images).cuda()
         labels = Variable(labels).cuda()
