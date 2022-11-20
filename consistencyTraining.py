@@ -150,7 +150,7 @@ def train(epoch, train_loader, model, optimizer, num_classes, noise_or_not, trai
         aug_images = []
         for index in sum_unconfident_samples:
             aug_images.append(train_dataset.getItemRandAug(index))
-        aug_images = torch.Tensor(aug_images).cuda()
+        aug_images = torch.stack(aug_images).cuda()
 
         print('images unconf 1:', aug_images)
         print('images unconf 2:', images[sum_unconfident_ind])
