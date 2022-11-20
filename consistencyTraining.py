@@ -71,6 +71,8 @@ def mixup_data(x, y, alpha=1.0, use_cuda=True):
     else:
         lam = 1
 
+    lam = max(lam, 1-lam)
+
     batch_size = x.size()[0]
     if use_cuda:
         index = torch.randperm(batch_size).cuda()
@@ -162,8 +164,8 @@ def cons_train(epoch, train_loader, model, optimizer, num_classes, noise_or_not,
             sum_unconf_inc += noise_or_not[index]
         sum_num_unconf += len(sum_unconfident_samples)
 
-        print('conf ind:', sum_confident_ind)
-        print('unconf ind:', sum_unconfident_ind)
+        # print('conf ind:', sum_confident_ind)
+        # print('unconf ind:', sum_unconfident_ind)
 
         # split into confident and unconfident logits and labels
         labels_conf = labels[sum_confident_ind]
@@ -183,9 +185,9 @@ def cons_train(epoch, train_loader, model, optimizer, num_classes, noise_or_not,
         labels_unconf = labels[sum_unconfident_ind]
         # create pseudolabels based on logits on lightly augmented images for unconfident set
         unconf_pseudolabels = torch.argmax(logits_unconf, dim=1)
-        print('logits unconf:', logits_unconf)
-        print('orig labels:', labels_unconf)
-        print('pseudo:', unconf_pseudolabels)
+        # print('logits unconf:', logits_unconf)
+        # print('orig labels:', labels_unconf)
+        # print('pseudo:', unconf_pseudolabels)
 
         # heavily augment images
         aug_images = []
