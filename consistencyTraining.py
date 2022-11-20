@@ -82,7 +82,52 @@ def mixup_data(x, y, alpha=1.0, use_cuda=True):
     return mixed_x, y_a, y_b, lam
 
 
-def train(epoch, train_loader, model, optimizer, num_classes, noise_or_not, train_dataset):
+def mixup_train(epoch, train_loader, model, optimizer):
+    train_total = 0
+    train_correct = 0
+
+    for i, (images, labels, indexes) in enumerate(train_loader):
+        ind = indexes.cpu().numpy().transpose()
+        batch_size = len(ind)
+
+        images = Variable(images).cuda()
+        labels = Variable(labels).cuda()
+
+        # mixup data
+        inputs, targets_a, targets_b, lam = mixup_data(images, labels)
+        inputs, targets_a, targets_b = map(
+            Variable, (inputs, targets_a, targets_b))
+
+        # Forward + Backward + Optimize
+        # print(targets_a.shape)
+        # print(targets_b.shape)
+        # print(inputs.shape)
+        logits = model(inputs)
+
+        prec_a, _ = accuracy(logits, targets_a, topk=(1, 5))
+        prec_b, _ = accuracy(logits, targets_b, topk=(1, 5))
+
+        prec = lam * prec_a + (1-lam)*prec_b
+        # prec = 0.0
+        train_total += 1
+        train_correct += prec
+
+        # mixup loss
+        loss = lam * F.cross_entropy(logits, targets_a, reduce=True) + (
+            1 - lam) * F.cross_entropy(logits, targets_b, reduce=True)
+
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+        if (i+1) % args.print_freq == 0:
+            print('Epoch [%d/%d], Iter [%d/%d] Training Accuracy: %.4F, A Training Accuracy: %.4F, B Training Accuracy: %.4F, Loss: %.4f'
+                  % (epoch+1, args.n_epoch, i+1, len(train_dataset)//batch_size, prec, prec_a, prec_b, loss.data))
+
+    train_acc = float(train_correct)/float(train_total)
+    return train_acc
+
+
+def cons_train(epoch, train_loader, model, optimizer, num_classes, noise_or_not, train_dataset):
     train_total = 0
     train_correct = 0
 
@@ -151,24 +196,15 @@ def train(epoch, train_loader, model, optimizer, num_classes, noise_or_not, trai
         # predict on heavily augmented
         aug_logits = model(aug_images)
 
-        print('aug_logits:', aug_logits)
         # unconf loss
         unconf_loss = F.cross_entropy(
             aug_logits, unconf_pseudolabels, reduce=True)
 
         # training accuracy
-        print('logits_conf shape:', logits_conf.shape)
-        print('conf_targets_a shape:', conf_targets_a.shape)
-
-        print('aug_logits shape:', aug_logits.shape)
-        print('unconf_pseudolabels shape:', unconf_pseudolabels.shape)
         prec_a, _ = accuracy(logits_conf, conf_targets_a, topk=(1, 5))
         prec_b, _ = accuracy(logits_conf, conf_targets_b, topk=(1, 5))
         prec_u = accuracy(aug_logits, unconf_pseudolabels, topk=(1, 5))
 
-        print('a:', prec_a)
-        print('b:', prec_b)
-        print('u:', prec_u)
         prec = lam * prec_a + (1-lam)*prec_b
         # prec = 0.0
         train_total += 1
@@ -272,26 +308,39 @@ for epoch in range(args.n_epoch):
     print(f'epoch {epoch}')
     adjust_learning_rate(optimizer, epoch, alpha_plan)
     model.train()
-    train_acc, sum_conf_inc, sum_num_conf, sum_unconf_inc, sum_num_unconf = train(
-        epoch, train_loader, model, optimizer, num_classes, noise_or_not, train_dataset)
+    if epoch < 10:
+        train_acc = mixup_train(epoch, train_loader, model, optimizer)
 
-    # evaluate models
-    test_acc = evaluate(test_loader=test_loader, model=model)
-    if test_acc > max_test:
-        max_test = test_acc
-    # save results
-    print('train acc on train images is ', train_acc)
-    print('test acc on test images is ', test_acc)
-    file.write("\nepoch: "+str(epoch))
-    file.write("\n\ttrain acc on train images is "+str(train_acc)+"\n")
-    file.write("\ttest acc on test images is "+str(test_acc)+"\n")
+        # evaluate models
+        test_acc = evaluate(test_loader=test_loader, model=model)
+        if test_acc > max_test:
+            max_test = test_acc
+        # save results
+        print('train acc on train images is ', train_acc)
+        print('test acc on test images is ', test_acc)
+        file.write("\nepoch: "+str(epoch))
+        file.write("\n\ttrain acc on train images is "+str(train_acc)+"\n")
+        file.write("\ttest acc on test images is "+str(test_acc)+"\n")
+    else:
+        train_acc, sum_conf_inc, sum_num_conf, sum_unconf_inc, sum_num_unconf = cons_train(
+            epoch, train_loader, model, optimizer, num_classes, noise_or_not, train_dataset)
 
-    file.write("\t\tSum num of noisy samples in confident: " +
-               str(sum_conf_inc)+" out of: " + str(sum_num_conf)+"\n")
-    file.write("\t\tSum num of noisy samples in unconfident: " +
-               str(sum_unconf_inc)+" out of: " + str(sum_num_unconf)+"\n")
+        # evaluate models
+        test_acc = evaluate(test_loader=test_loader, model=model)
+        if test_acc > max_test:
+            max_test = test_acc
+        # save results
+        print('train acc on train images is ', train_acc)
+        print('test acc on test images is ', test_acc)
+        file.write("\nepoch: "+str(epoch))
+        file.write("\n\ttrain acc on train images is "+str(train_acc)+"\n")
+        file.write("\ttest acc on test images is "+str(test_acc)+"\n")
 
-    file.write("\ttest acc on test images is "+str(test_acc)+"\n")
+        file.write("\t\tSum num of noisy samples in confident: " +
+                   str(sum_conf_inc)+" out of: " + str(sum_num_conf)+"\n")
+        file.write("\t\tSum num of noisy samples in unconfident: " +
+                   str(sum_unconf_inc)+" out of: " + str(sum_num_unconf)+"\n")
+
 file.write("\n\nfinal test acc on test images is "+str(test_acc)+"\n")
 file.write("max test acc on test images is "+str(max_test)+"\n")
 
