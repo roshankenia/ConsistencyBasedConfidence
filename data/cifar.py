@@ -211,11 +211,14 @@ class CIFAR10(data.Dataset):
         print('get rand index:', index)
         if self.train:
             if self.noise_type != 'clean':
-                img, target = self.train_data[index], self.train_noisy_labels[index]
+                img, target = np.array(self.train_data)[index], np.array(
+                    self.train_noisy_labels)[index]
             else:
-                img, target = self.train_data[index], self.train_labels[index]
+                img, target = np.array(self.train_data)[
+                    index], np.array(self.train_labels)[index]
         else:
-            img, target = self.test_data[index], self.test_labels[index]
+            img, target = np.array(self.test_data)[
+                index], np.array(self.test_labels)[index]
 
         # doing this so that it is consistent with all other datasets
         # to return a PIL Image
