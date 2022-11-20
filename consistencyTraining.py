@@ -94,6 +94,9 @@ def train(epoch, train_loader, model, optimizer, num_classes, noise_or_not, trai
 
     for i, (images, labels, indexes) in enumerate(train_loader):
         ind = indexes.cpu().numpy().transpose()
+
+        print('indexes:', indexes)
+        print('ind:', ind)
         batch_size = len(ind)
 
         images = Variable(images).cuda()
@@ -146,8 +149,9 @@ def train(epoch, train_loader, model, optimizer, num_classes, noise_or_not, trai
         print('pseudo:', unconf_pseudolabels)
 
         # heavily augment images
-        print('unconf act ind:', ind[sum_unconfident_ind])
-        aug_images, aug_lab, aug_ind = train_dataset.getItemRandAug(ind[sum_unconfident_ind])
+        print('unconf act ind:', indexes[sum_unconfident_ind].cpu().numpy())
+        aug_images, aug_lab, aug_ind = train_dataset.getItemRandAug(
+            indexes[sum_unconfident_ind].cpu().numpy())
         aug_images = Variable(aug_images).cuda()
 
         print('images unconf 1:', aug_images)
