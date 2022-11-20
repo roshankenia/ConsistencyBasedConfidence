@@ -208,17 +208,8 @@ class CIFAR10(data.Dataset):
         Returns:
             tuple: (image, target) where target is index of the target class.
         """
-        print('get rand index:', index)
-        if self.train:
-            if self.noise_type != 'clean':
-                img, target = np.array(self.train_data)[index], np.array(
-                    self.train_noisy_labels)[index]
-            else:
-                img, target = np.array(self.train_data)[
-                    index], np.array(self.train_labels)[index]
-        else:
-            img, target = np.array(self.test_data)[
-                index], np.array(self.test_labels)[index]
+        print('get item index:', index)
+        img = self.train_data[index]
 
         # doing this so that it is consistent with all other datasets
         # to return a PIL Image
@@ -227,10 +218,7 @@ class CIFAR10(data.Dataset):
         if self.rand_transform is not None:
             img = self.rand_transform(img)
 
-        if self.target_transform is not None:
-            target = self.target_transform(target)
-
-        return img, target, index
+        return img
 
     def __len__(self):
         if self.train:
