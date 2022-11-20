@@ -149,9 +149,9 @@ def train(epoch, train_loader, model, optimizer, num_classes, noise_or_not, trai
         print('pseudo:', unconf_pseudolabels)
 
         # heavily augment images
-        print('unconf act ind:', ind[sum_unconfident_ind])
+        print('unconf act ind:', sum_unconfident_samples)
         aug_images, aug_lab, aug_ind = train_dataset.getItemRandAug(
-            ind[sum_unconfident_ind])
+            sum_unconfident_samples)
         aug_images = Variable(aug_images).cuda()
 
         print('images unconf 1:', aug_images)
