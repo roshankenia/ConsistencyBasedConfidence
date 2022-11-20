@@ -25,6 +25,13 @@ randAugment = transforms.Compose([
     transforms.RandAugment()
 ])
 
+train_cifar10_transform = transforms.Compose([
+    transforms.RandomCrop(32, padding=4),
+    transforms.RandomHorizontalFlip(),
+    transforms.ToTensor(),
+    transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),
+])
+
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--lr', type=float, default=0.1)
@@ -102,13 +109,14 @@ def train(epoch, train_loader, model, optimizer, num_classes, noise_or_not):
         ind = indexes.cpu().numpy().transpose()
         batch_size = len(ind)
 
-        img_cpy = images.detach().clone()
+        img_use = images.detach().clone()
+        img_use = train_cifar10_transform(img_use)
 
-        images = Variable(images).cuda()
+        img_use = Variable(img_use).cuda()
         labels = Variable(labels).cuda()
 
         # Forward + Backward + Optimize
-        logits = model(images)
+        logits = model(img_use)
 
         # obtain confidence indexes for sum metric
         sum_confident_ind, sum_unconfident_ind = sum_metric(
@@ -131,7 +139,7 @@ def train(epoch, train_loader, model, optimizer, num_classes, noise_or_not):
 
         # split into confident and unconfident logits and labels
         labels_conf = labels[sum_confident_ind]
-        images_conf = images[sum_confident_ind]
+        images_conf = img_use[sum_confident_ind]
 
         # apply MixUp to confident labels
         conf_inputs, conf_targets_a, conf_targets_b, lam = mixup_data(
@@ -147,7 +155,7 @@ def train(epoch, train_loader, model, optimizer, num_classes, noise_or_not):
         # get unconf
         logits_unconf = logits[sum_unconfident_ind]
         labels_unconf = labels[sum_unconfident_ind]
-        images_unconf = img_cpy[sum_unconfident_ind]
+        images_unconf = images[sum_unconfident_ind]
         # create pseudolabels based on logits on lightly augmented images for unconfident set
         unconf_pseudolabels = torch.argmax(logits_unconf, dim=1)
         print('logits unconf:', logits_unconf)
@@ -156,7 +164,7 @@ def train(epoch, train_loader, model, optimizer, num_classes, noise_or_not):
 
         # heavily augment images
         print('images unconf 1:', images_unconf)
-        print('images unconf 2:', images[sum_unconfident_ind])
+        print('images unconf 2:', img_use[sum_unconfident_ind])
         aug_images = randAugment(images_unconf)
         aug_images = Variable(aug_images).cuda()
 
