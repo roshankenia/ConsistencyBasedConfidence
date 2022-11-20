@@ -20,19 +20,6 @@ if not torch.cuda.is_available() or torch.cuda.device_count() != 1:
 else:
     print('GPU is being properly used')
 
-
-randAugment = transforms.Compose([
-    transforms.RandAugment()
-])
-
-train_cifar10_transform = transforms.Compose([
-    transforms.RandomCrop(32, padding=4),
-    transforms.RandomHorizontalFlip(),
-    transforms.ToTensor(),
-    transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),
-])
-
-
 parser = argparse.ArgumentParser()
 parser.add_argument('--lr', type=float, default=0.1)
 parser.add_argument('--noise_type', type=str,
@@ -96,7 +83,7 @@ def mixup_data(x, y, alpha=1.0, use_cuda=True):
     return mixed_x, y_a, y_b, lam
 
 
-def train(epoch, train_loader, model, optimizer, num_classes, noise_or_not):
+def train(epoch, train_loader, model, optimizer, num_classes, noise_or_not, train_dataset):
     train_total = 0
     train_correct = 0
 
@@ -109,14 +96,11 @@ def train(epoch, train_loader, model, optimizer, num_classes, noise_or_not):
         ind = indexes.cpu().numpy().transpose()
         batch_size = len(ind)
 
-        img_use = images.detach().clone()
-        img_use = train_cifar10_transform(img_use)
-
-        img_use = Variable(img_use).cuda()
+        images = Variable(images).cuda()
         labels = Variable(labels).cuda()
 
         # Forward + Backward + Optimize
-        logits = model(img_use)
+        logits = model(images)
 
         # obtain confidence indexes for sum metric
         sum_confident_ind, sum_unconfident_ind = sum_metric(
@@ -139,7 +123,7 @@ def train(epoch, train_loader, model, optimizer, num_classes, noise_or_not):
 
         # split into confident and unconfident logits and labels
         labels_conf = labels[sum_confident_ind]
-        images_conf = img_use[sum_confident_ind]
+        images_conf = images[sum_confident_ind]
 
         # apply MixUp to confident labels
         conf_inputs, conf_targets_a, conf_targets_b, lam = mixup_data(
@@ -155,7 +139,6 @@ def train(epoch, train_loader, model, optimizer, num_classes, noise_or_not):
         # get unconf
         logits_unconf = logits[sum_unconfident_ind]
         labels_unconf = labels[sum_unconfident_ind]
-        images_unconf = images[sum_unconfident_ind]
         # create pseudolabels based on logits on lightly augmented images for unconfident set
         unconf_pseudolabels = torch.argmax(logits_unconf, dim=1)
         print('logits unconf:', logits_unconf)
@@ -163,10 +146,11 @@ def train(epoch, train_loader, model, optimizer, num_classes, noise_or_not):
         print('pseudo:', unconf_pseudolabels)
 
         # heavily augment images
-        print('images unconf 1:', images_unconf)
-        print('images unconf 2:', img_use[sum_unconfident_ind])
-        aug_images = randAugment(images_unconf)
+        aug_images, aug_lab, aug_ind = train_dataset.getItemRandAug(index = indexes[sum_unconfident_ind])
         aug_images = Variable(aug_images).cuda()
+
+        print('images unconf 1:', aug_images)
+        print('images unconf 2:', images[sum_unconfident_ind])
 
         # predict on heavily augmented
         aug_logits = model(aug_images)
@@ -282,7 +266,7 @@ for epoch in range(args.n_epoch):
     adjust_learning_rate(optimizer, epoch, alpha_plan)
     model.train()
     train_acc, sum_conf_inc, sum_num_conf, sum_unconf_inc, sum_num_unconf = train(
-        epoch, train_loader, model, optimizer, num_classes, noise_or_not)
+        epoch, train_loader, model, optimizer, num_classes, noise_or_not, train_dataset)
 
     # evaluate models
     test_acc = evaluate(test_loader=test_loader, model=model)

@@ -10,6 +10,8 @@ else:
     import pickle
 import torch
 import torch.utils.data as data
+import torchvision.transforms as transforms
+
 from .utils import download_url, check_integrity, multiclass_noisify
 import sys
 # ensure we are running on the correct gpu
@@ -62,6 +64,13 @@ class CIFAR10(data.Dataset):
         self.root = os.path.expanduser(root)
         self.transform = transform
         self.target_transform = target_transform
+        self.rand_transform = transforms.Compose([
+            transforms.RandAugment(),
+            transforms.ToTensor(),
+            transforms.Normalize((0.4914, 0.4822, 0.4465),
+                                 (0.2023, 0.1994, 0.2010)),
+        ])
+
         self.train = train  # training set or test set
         self.dataset = 'cifar10'
         self.noise_type = noise_type
@@ -181,8 +190,36 @@ class CIFAR10(data.Dataset):
         # to return a PIL Image
         img = Image.fromarray(img)
 
-        # if self.transform is not None:
-        #     img = self.transform(img)
+        if self.transform is not None:
+            img = self.transform(img)
+
+        if self.target_transform is not None:
+            target = self.target_transform(target)
+
+        return img, target, index
+
+    def getItemRandAug(self, index):
+        """
+        Args:
+            index (int): Index
+
+        Returns:
+            tuple: (image, target) where target is index of the target class.
+        """
+        if self.train:
+            if self.noise_type != 'clean':
+                img, target = self.train_data[index], self.train_noisy_labels[index]
+            else:
+                img, target = self.train_data[index], self.train_labels[index]
+        else:
+            img, target = self.test_data[index], self.test_labels[index]
+
+        # doing this so that it is consistent with all other datasets
+        # to return a PIL Image
+        img = Image.fromarray(img)
+
+        if self.rand_transform is not None:
+            img = self.rand_transform(img)
 
         if self.target_transform is not None:
             target = self.target_transform(target)
