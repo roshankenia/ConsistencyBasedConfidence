@@ -2,7 +2,6 @@
 import os
 import torch
 import torch.nn.functional as F
-from torch.autograd import Variable
 from data.datasets import input_dataset
 from models import *
 import argparse
@@ -99,8 +98,8 @@ def train(epoch, train_loader, model, optimizer, num_classes, noise_or_not, trai
         print('ind:', ind)
         batch_size = len(ind)
 
-        images = Variable(images).cuda()
-        labels = Variable(labels).cuda()
+        images = images.cuda()
+        labels = labels.cuda()
 
         # Forward + Backward + Optimize
         logits = model(images)
@@ -131,8 +130,6 @@ def train(epoch, train_loader, model, optimizer, num_classes, noise_or_not, trai
         # apply MixUp to confident labels
         conf_inputs, conf_targets_a, conf_targets_b, lam = mixup_data(
             images_conf, labels_conf)
-        conf_inputs, conf_targets_a, conf_targets_b = map(
-            Variable, (conf_inputs, conf_targets_a, conf_targets_b))
 
         logits_conf = model(conf_inputs)
         # conf loss
@@ -151,9 +148,9 @@ def train(epoch, train_loader, model, optimizer, num_classes, noise_or_not, trai
         # heavily augment images
         print('unconf act ind:', sum_unconfident_samples)
         aug_images = []
-        for index in sum_unconfident_samples:   
+        for index in sum_unconfident_samples:
             aug_images.append(train_dataset.getItemRandAug(index))
-        aug_images = Variable(torch.Tensor(aug_images)).cuda()
+        aug_images = aug_images.cuda()
 
         print('images unconf 1:', aug_images)
         print('images unconf 2:', images[sum_unconfident_ind])

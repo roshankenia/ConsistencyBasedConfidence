@@ -179,7 +179,6 @@ class CIFAR10(data.Dataset):
             tuple: (image, target) where target is index of the target class.
         """
 
-        print('get item index:', index)
         if self.train:
             if self.noise_type != 'clean':
                 img, target = self.train_data[index], self.train_noisy_labels[index]
@@ -208,7 +207,6 @@ class CIFAR10(data.Dataset):
         Returns:
             tuple: (image, target) where target is index of the target class.
         """
-        print('get item index:', index)
         img = self.train_data[index]
 
         # doing this so that it is consistent with all other datasets
