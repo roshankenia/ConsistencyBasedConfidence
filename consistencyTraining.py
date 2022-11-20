@@ -9,8 +9,8 @@ import argparse
 import sys
 import time
 from consistencySumMetric import consistencyIndexes as sum_metric
-from consistencyAvgMetric import consistencyIndexes as avg_metric
-from consistencyThreshMetric import consistencyIndexes as thresh_metric
+import numpy as np
+import torchvision.transforms as transforms
 # ensure we are running on the correct gpu
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
 os.environ["CUDA_VISIBLE_DEVICES"] = "6"  # (xxxx is your specific GPU ID)
@@ -19,6 +19,11 @@ if not torch.cuda.is_available() or torch.cuda.device_count() != 1:
     sys.exit()
 else:
     print('GPU is being properly used')
+
+
+randAugment = transforms.Compose([
+    transforms.RandAugment()
+])
 
 
 parser = argparse.ArgumentParser()
@@ -66,6 +71,24 @@ def accuracy(logit, target, topk=(1,)):
 # Train the Model
 
 
+def mixup_data(x, y, alpha=1.0, use_cuda=True):
+    '''Returns mixed inputs, pairs of targets, and lambda'''
+    if alpha > 0:
+        lam = np.random.beta(alpha, alpha)
+    else:
+        lam = 1
+
+    batch_size = x.size()[0]
+    if use_cuda:
+        index = torch.randperm(batch_size).cuda()
+    else:
+        index = torch.randperm(batch_size)
+
+    mixed_x = lam * x + (1 - lam) * x[index, :]
+    y_a, y_b = y, y[index]
+    return mixed_x, y_a, y_b, lam
+
+
 def train(epoch, train_loader, model, optimizer, num_classes, noise_or_not):
     train_total = 0
     train_correct = 0
@@ -74,16 +97,6 @@ def train(epoch, train_loader, model, optimizer, num_classes, noise_or_not):
     sum_num_conf = 0
     sum_unconf_inc = 0
     sum_num_unconf = 0
-
-    avg_conf_inc = 0
-    avg_num_conf = 0
-    avg_unconf_inc = 0
-    avg_num_unconf = 0
-
-    thresh_conf_inc = 0
-    thresh_num_conf = 0
-    thresh_unconf_inc = 0
-    thresh_num_unconf = 0
 
     for i, (images, labels, indexes) in enumerate(train_loader):
         ind = indexes.cpu().numpy().transpose()
@@ -111,43 +124,53 @@ def train(epoch, train_loader, model, optimizer, num_classes, noise_or_not):
             sum_unconf_inc += noise_or_not[ind]
         sum_num_unconf += len(sum_unconfident_samples)
 
-        # obtain confidence indexes for avg metric
-        avg_confident_ind, avg_unconfident_ind = avg_metric(
-            logits, labels, num_classes)
+        print('conf ind:', sum_confident_ind)
+        print('unconf ind:', sum_unconfident_ind)
 
-        # calculate how accurate
-        avg_confident_samples = indexes[avg_confident_ind]
-        avg_unconfident_samples = indexes[avg_unconfident_ind]
+        # split into confident and unconfident logits and labels
+        labels_conf = labels[sum_confident_ind]
+        images_conf = images[sum_confident_ind]
 
-        for ind in avg_confident_samples:
-            avg_conf_inc += noise_or_not[ind]
-        avg_num_conf += len(avg_confident_samples)
+        # apply MixUp to confident labels
+        conf_inputs, conf_targets_a, conf_targets_b, lam = mixup_data(
+            images_conf, labels_conf)
+        conf_inputs, conf_targets_a, conf_targets_b = map(
+            Variable, (conf_inputs, conf_targets_a, conf_targets_b))
 
-        for ind in avg_unconfident_samples:
-            avg_unconf_inc += noise_or_not[ind]
-        avg_num_unconf += len(avg_unconfident_samples)
+        logits_conf = model(conf_inputs)
+        # conf loss
+        conf_loss = lam * F.cross_entropy(logits_conf, conf_targets_a, reduce=True) + (
+            1 - lam) * F.cross_entropy(logits_conf, conf_targets_b, reduce=True)
 
-        # obtain confidence indexes for thresh metric
-        thresh_confident_ind, thresh_unconfident_ind = thresh_metric(
-            logits, labels, num_classes, threshold=0.3)
+        # get unconf
+        logits_unconf = logits[sum_unconfident_ind]
+        labels_unconf = labels[sum_unconfident_ind]
+        images_unconf = images[sum_unconfident_ind]
+        # create pseudolabels based on logits on lightly augmented images for unconfident set
+        unconf_pseudolabels = torch.argmax(logits_unconf, dim=1)
 
-        # calculate how accurate
-        thresh_confident_samples = indexes[thresh_confident_ind]
-        thresh_unconfident_samples = indexes[thresh_unconfident_ind]
+        print('orig labels:', labels_unconf)
+        print('pseudo:', unconf_pseudolabels)
 
-        for ind in thresh_confident_samples:
-            thresh_conf_inc += noise_or_not[ind]
-        thresh_num_conf += len(thresh_confident_samples)
+        # heavily augment images
+        aug_images = randAugment(images_unconf)
+        aug_images = Variable(aug_images).cuda()
 
-        for ind in thresh_unconfident_samples:
-            thresh_unconf_inc += noise_or_not[ind]
-        thresh_num_unconf += len(thresh_unconfident_samples)
+        # predict on heavily augmented
+        aug_logits = model(aug_images)
+        # unconf loss
+        unconf_loss = F.cross_entropy(
+            aug_logits, unconf_pseudolabels, reduce=True)
 
-        prec, _ = accuracy(logits, labels, topk=(1, 5))
+        # training accuracy
+        prec_a, _ = accuracy(logits_conf, conf_targets_a, topk=(1, 5))
+        prec_b, _ = accuracy(logits_conf, conf_targets_b, topk=(1, 5))
+        prec_u = accuracy(aug_logits, unconf_pseudolabels, topk=(1, 5))
+        prec = lam * prec_a + (1-lam)*prec_b + prec_u
         # prec = 0.0
         train_total += 1
         train_correct += prec
-        loss = F.cross_entropy(logits, labels, reduce=True)
+        loss = conf_loss + unconf_loss
 
         optimizer.zero_grad()
         loss.backward()
@@ -159,16 +182,8 @@ def train(epoch, train_loader, model, optimizer, num_classes, noise_or_not):
     print(f'Sum confident noise: {sum_conf_inc} out of {sum_num_conf}')
     print(f'Sum unconfident noise: {sum_unconf_inc} out of {sum_num_unconf}')
 
-    print(f'Avg confident noise: {avg_conf_inc} out of {avg_num_conf}')
-    print(f'Avg unconfident noise: {avg_unconf_inc} out of {avg_num_unconf}')
-
-    print(
-        f'Thresh confident noise: {thresh_conf_inc} out of {thresh_num_conf}')
-    print(
-        f'Thresh unconfident noise: {thresh_unconf_inc} out of {thresh_num_unconf}')
-
     train_acc = float(train_correct)/float(train_total)
-    return train_acc, sum_conf_inc, sum_num_conf, sum_unconf_inc, sum_num_unconf, avg_conf_inc, avg_num_conf, avg_unconf_inc, avg_num_unconf, thresh_conf_inc, thresh_num_conf, thresh_unconf_inc, thresh_num_unconf
+    return train_acc, sum_conf_inc, sum_num_conf, sum_unconf_inc, sum_num_unconf
 # test
 # Evaluate the Model
 
@@ -254,7 +269,7 @@ for epoch in range(args.n_epoch):
     print(f'epoch {epoch}')
     adjust_learning_rate(optimizer, epoch, alpha_plan)
     model.train()
-    train_acc, sum_conf_inc, sum_num_conf, sum_unconf_inc, sum_num_unconf, avg_conf_inc, avg_num_conf, avg_unconf_inc, avg_num_unconf, thresh_conf_inc, thresh_num_conf, thresh_unconf_inc, thresh_num_unconf = train(
+    train_acc, sum_conf_inc, sum_num_conf, sum_unconf_inc, sum_num_unconf = train(
         epoch, train_loader, model, optimizer, num_classes, noise_or_not)
 
     # evaluate models
@@ -272,16 +287,6 @@ for epoch in range(args.n_epoch):
                str(sum_conf_inc)+" out of: " + str(sum_num_conf)+"\n")
     file.write("\t\tSum num of noisy samples in unconfident: " +
                str(sum_unconf_inc)+" out of: " + str(sum_num_unconf)+"\n")
-
-    file.write("\t\tAvg num of noisy samples in confident: " +
-               str(avg_conf_inc)+" out of: " + str(avg_num_conf)+"\n")
-    file.write("\t\tAvg num of noisy samples in unconfident: " +
-               str(avg_unconf_inc)+" out of: " + str(avg_num_unconf)+"\n")
-
-    file.write("\t\tThresh num of noisy samples in confident: " +
-               str(thresh_conf_inc)+" out of: " + str(thresh_num_conf)+"\n")
-    file.write("\t\tThresh num of noisy samples in unconfident: " +
-               str(thresh_unconf_inc)+" out of: " + str(thresh_num_unconf)+"\n")
 
     file.write("\ttest acc on test images is "+str(test_acc)+"\n")
 file.write("\n\nfinal test acc on test images is "+str(test_acc)+"\n")
