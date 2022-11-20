@@ -165,6 +165,10 @@ def train(epoch, train_loader, model, optimizer, num_classes, noise_or_not, trai
         prec_a, _ = accuracy(logits_conf, conf_targets_a, topk=(1, 5))
         prec_b, _ = accuracy(logits_conf, conf_targets_b, topk=(1, 5))
         prec_u = accuracy(aug_logits, unconf_pseudolabels, topk=(1, 5))
+
+        print('a:', prec_a)
+        print('b:', prec_b)
+        print('u:', prec_u)
         prec = lam * prec_a + (1-lam)*prec_b + prec_u
         # prec = 0.0
         train_total += 1
