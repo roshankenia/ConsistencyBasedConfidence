@@ -107,8 +107,8 @@ def train(epoch, train_loader, model, optimizer, num_classes, noise_or_not, trai
             logits, labels, num_classes)
 
         # calculate how accurate
-        sum_confident_samples = indexes[sum_confident_ind]
-        sum_unconfident_samples = indexes[sum_unconfident_ind]
+        sum_confident_samples = ind[sum_confident_ind]
+        sum_unconfident_samples = ind[sum_unconfident_ind]
 
         for ind in sum_confident_samples:
             sum_conf_inc += noise_or_not[ind]
@@ -146,8 +146,8 @@ def train(epoch, train_loader, model, optimizer, num_classes, noise_or_not, trai
         print('pseudo:', unconf_pseudolabels)
 
         # heavily augment images
-        print('unconf act ind:', indexes[sum_unconfident_ind])
-        aug_images, aug_lab, aug_ind = train_dataset.getItemRandAug(indexes[sum_unconfident_ind])
+        print('unconf act ind:', ind[sum_unconfident_ind])
+        aug_images, aug_lab, aug_ind = train_dataset.getItemRandAug(ind[sum_unconfident_ind])
         aug_images = Variable(aug_images).cuda()
 
         print('images unconf 1:', aug_images)
