@@ -266,7 +266,7 @@ for epoch in range(args.n_epoch):
     print(f'epoch {epoch}')
     adjust_learning_rate(optimizer, epoch, alpha_plan)
     model.train()
-    if epoch < 10:
+    if epoch < 20:
         train_acc = train(epoch, train_loader, model, optimizer)
 
         # evaluate models
