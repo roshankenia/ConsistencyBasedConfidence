@@ -1,40 +1,565 @@
 
 epoch: 0
-	train acc on train images is 19.438539002557544
-	test acc on test images is 31.03
+	train acc on train images is 22.33815537084399
+	test acc on test images is 32.86
 
 epoch: 1
-	train acc on train images is 36.10094309462916
-	test acc on test images is 38.62
+	train acc on train images is 36.8278452685422
+	test acc on test images is 41.5
 
 epoch: 2
-	train acc on train images is 45.953884271099746
-	test acc on test images is 52.0
+	train acc on train images is 46.69077685421995
+	test acc on test images is 53.33
 
 epoch: 3
-	train acc on train images is 54.81457800511509
-	test acc on test images is 62.66
+	train acc on train images is 54.64074488491048
+	test acc on test images is 57.82
 
 epoch: 4
-	train acc on train images is 61.701566496163686
-	test acc on test images is 64.65
+	train acc on train images is 59.86812659846547
+	test acc on test images is 59.38
 
 epoch: 5
-	train acc on train images is 67.56034207161126
-	test acc on test images is 68.43
+	train acc on train images is 63.683264066496164
+	test acc on test images is 61.33
 
 epoch: 6
-	train acc on train images is 71.08815537084399
-	test acc on test images is 68.44
+	train acc on train images is 66.72714194373401
+	test acc on test images is 68.64
 
 epoch: 7
-	train acc on train images is 73.41032608695652
-	test acc on test images is 75.45
+	train acc on train images is 70.11708759590793
+	test acc on test images is 72.8
 
 epoch: 8
-	train acc on train images is 75.13147378516624
-	test acc on test images is 61.67
+	train acc on train images is 72.17311381074168
+	test acc on test images is 75.79
 
 epoch: 9
-	train acc on train images is 76.30434782608695
-	test acc on test images is 77.66
+	train acc on train images is 73.85070332480818
+	test acc on test images is 73.85
+
+epoch: 10
+	train acc on train images is 74.76622442455243
+	test acc on test images is 75.96
+
+epoch: 11
+	train acc on train images is 75.75407608695652
+	test acc on test images is 77.57
+
+epoch: 12
+	train acc on train images is 76.81865409207161
+	test acc on test images is 79.71
+
+epoch: 13
+	train acc on train images is 77.20668158567774
+	test acc on test images is 78.65
+
+epoch: 14
+	train acc on train images is 77.68742007672634
+	test acc on test images is 76.29
+
+epoch: 15
+	train acc on train images is 78.09343030690538
+	test acc on test images is 77.8
+
+epoch: 16
+	train acc on train images is 78.56777493606138
+	test acc on test images is 80.73
+
+epoch: 17
+	train acc on train images is 78.67127557544757
+	test acc on test images is 76.91
+
+epoch: 18
+	train acc on train images is 79.22394501278772
+	test acc on test images is 77.78
+
+epoch: 19
+	train acc on train images is 79.40896739130434
+	test acc on test images is 79.89
+
+epoch: 20
+	train acc on train images is 73.66282368925832
+	test acc on test images is 56.77
+		Sum num of noisy samples in confident: 1229 out of: 29936
+		Sum num of noisy samples in unconfident: 3276 out of: 20064
+
+epoch: 21
+	train acc on train images is 83.31982796515345
+	test acc on test images is 49.89
+		Sum num of noisy samples in confident: 1038 out of: 30225
+		Sum num of noisy samples in unconfident: 3467 out of: 19775
+
+epoch: 22
+	train acc on train images is 83.21323029891305
+	test acc on test images is 54.2
+		Sum num of noisy samples in confident: 1056 out of: 30551
+		Sum num of noisy samples in unconfident: 3449 out of: 19449
+
+epoch: 23
+	train acc on train images is 85.64845748081841
+	test acc on test images is 46.62
+		Sum num of noisy samples in confident: 994 out of: 30716
+		Sum num of noisy samples in unconfident: 3511 out of: 19284
+
+epoch: 24
+	train acc on train images is 86.41554108056266
+	test acc on test images is 53.65
+		Sum num of noisy samples in confident: 989 out of: 30678
+		Sum num of noisy samples in unconfident: 3516 out of: 19322
+
+epoch: 25
+	train acc on train images is 86.57404891304348
+	test acc on test images is 40.97
+		Sum num of noisy samples in confident: 991 out of: 30669
+		Sum num of noisy samples in unconfident: 3514 out of: 19331
+
+epoch: 26
+	train acc on train images is 88.45557265025576
+	test acc on test images is 62.05
+		Sum num of noisy samples in confident: 973 out of: 30803
+		Sum num of noisy samples in unconfident: 3532 out of: 19197
+
+epoch: 27
+	train acc on train images is 89.40271339514067
+	test acc on test images is 49.79
+		Sum num of noisy samples in confident: 899 out of: 30703
+		Sum num of noisy samples in unconfident: 3606 out of: 19297
+
+epoch: 28
+	train acc on train images is 89.17651054987212
+	test acc on test images is 59.01
+		Sum num of noisy samples in confident: 895 out of: 30783
+		Sum num of noisy samples in unconfident: 3610 out of: 19217
+
+epoch: 29
+	train acc on train images is 89.82304987212277
+	test acc on test images is 58.68
+		Sum num of noisy samples in confident: 912 out of: 30799
+		Sum num of noisy samples in unconfident: 3593 out of: 19201
+
+epoch: 30
+	train acc on train images is 89.60437979539643
+	test acc on test images is 58.21
+		Sum num of noisy samples in confident: 929 out of: 30603
+		Sum num of noisy samples in unconfident: 3576 out of: 19397
+
+epoch: 31
+	train acc on train images is 91.07414881713555
+	test acc on test images is 54.34
+		Sum num of noisy samples in confident: 861 out of: 30629
+		Sum num of noisy samples in unconfident: 3644 out of: 19371
+
+epoch: 32
+	train acc on train images is 90.37125359654732
+	test acc on test images is 57.78
+		Sum num of noisy samples in confident: 866 out of: 30558
+		Sum num of noisy samples in unconfident: 3639 out of: 19442
+
+epoch: 33
+	train acc on train images is 90.55583639705883
+	test acc on test images is 57.03
+		Sum num of noisy samples in confident: 909 out of: 30659
+		Sum num of noisy samples in unconfident: 3596 out of: 19341
+
+epoch: 34
+	train acc on train images is 91.460647778133
+	test acc on test images is 61.46
+		Sum num of noisy samples in confident: 846 out of: 30499
+		Sum num of noisy samples in unconfident: 3659 out of: 19501
+
+epoch: 35
+	train acc on train images is 90.87787723785166
+	test acc on test images is 57.77
+		Sum num of noisy samples in confident: 862 out of: 30500
+		Sum num of noisy samples in unconfident: 3643 out of: 19500
+
+epoch: 36
+	train acc on train images is 91.05466751918159
+	test acc on test images is 55.11
+		Sum num of noisy samples in confident: 857 out of: 30525
+		Sum num of noisy samples in unconfident: 3648 out of: 19475
+
+epoch: 37
+	train acc on train images is 90.93800951086956
+	test acc on test images is 57.72
+		Sum num of noisy samples in confident: 881 out of: 30395
+		Sum num of noisy samples in unconfident: 3624 out of: 19605
+
+epoch: 38
+	train acc on train images is 90.540461157289
+	test acc on test images is 56.0
+		Sum num of noisy samples in confident: 932 out of: 30495
+		Sum num of noisy samples in unconfident: 3573 out of: 19505
+
+epoch: 39
+	train acc on train images is 91.54717471227622
+	test acc on test images is 61.46
+		Sum num of noisy samples in confident: 876 out of: 30544
+		Sum num of noisy samples in unconfident: 3629 out of: 19456
+
+epoch: 40
+	train acc on train images is 91.62115369245524
+	test acc on test images is 60.3
+		Sum num of noisy samples in confident: 894 out of: 30572
+		Sum num of noisy samples in unconfident: 3611 out of: 19428
+
+epoch: 41
+	train acc on train images is 90.42879835358056
+	test acc on test images is 54.81
+		Sum num of noisy samples in confident: 932 out of: 30626
+		Sum num of noisy samples in unconfident: 3573 out of: 19374
+
+epoch: 42
+	train acc on train images is 91.0068234494885
+	test acc on test images is 53.16
+		Sum num of noisy samples in confident: 919 out of: 30252
+		Sum num of noisy samples in unconfident: 3586 out of: 19748
+
+epoch: 43
+	train acc on train images is 89.32076206841433
+	test acc on test images is 53.44
+		Sum num of noisy samples in confident: 929 out of: 30359
+		Sum num of noisy samples in unconfident: 3576 out of: 19641
+
+epoch: 44
+	train acc on train images is 91.04518662084399
+	test acc on test images is 61.34
+		Sum num of noisy samples in confident: 869 out of: 30562
+		Sum num of noisy samples in unconfident: 3636 out of: 19438
+
+epoch: 45
+	train acc on train images is 90.6153592551151
+	test acc on test images is 53.74
+		Sum num of noisy samples in confident: 893 out of: 30328
+		Sum num of noisy samples in unconfident: 3612 out of: 19672
+
+epoch: 46
+	train acc on train images is 90.88467071611254
+	test acc on test images is 57.88
+		Sum num of noisy samples in confident: 888 out of: 30528
+		Sum num of noisy samples in unconfident: 3617 out of: 19472
+
+epoch: 47
+	train acc on train images is 90.93433304028133
+	test acc on test images is 58.2
+		Sum num of noisy samples in confident: 893 out of: 30525
+		Sum num of noisy samples in unconfident: 3612 out of: 19475
+
+epoch: 48
+	train acc on train images is 91.23332600703324
+	test acc on test images is 57.41
+		Sum num of noisy samples in confident: 907 out of: 30588
+		Sum num of noisy samples in unconfident: 3598 out of: 19412
+
+epoch: 49
+	train acc on train images is 90.64574008951406
+	test acc on test images is 55.73
+		Sum num of noisy samples in confident: 902 out of: 30534
+		Sum num of noisy samples in unconfident: 3603 out of: 19466
+
+epoch: 50
+	train acc on train images is 91.4111353101023
+	test acc on test images is 48.13
+		Sum num of noisy samples in confident: 875 out of: 30437
+		Sum num of noisy samples in unconfident: 3630 out of: 19563
+
+epoch: 51
+	train acc on train images is 91.38984574808184
+	test acc on test images is 58.64
+		Sum num of noisy samples in confident: 853 out of: 30272
+		Sum num of noisy samples in unconfident: 3652 out of: 19728
+
+epoch: 52
+	train acc on train images is 91.32044237531969
+	test acc on test images is 62.09
+		Sum num of noisy samples in confident: 905 out of: 30430
+		Sum num of noisy samples in unconfident: 3600 out of: 19570
+
+epoch: 53
+	train acc on train images is 90.63749800191816
+	test acc on test images is 59.12
+		Sum num of noisy samples in confident: 882 out of: 30370
+		Sum num of noisy samples in unconfident: 3623 out of: 19630
+
+epoch: 54
+	train acc on train images is 91.46295556265984
+	test acc on test images is 53.97
+		Sum num of noisy samples in confident: 884 out of: 30536
+		Sum num of noisy samples in unconfident: 3621 out of: 19464
+
+epoch: 55
+	train acc on train images is 91.66015625
+	test acc on test images is 57.84
+		Sum num of noisy samples in confident: 885 out of: 30244
+		Sum num of noisy samples in unconfident: 3620 out of: 19756
+
+epoch: 56
+	train acc on train images is 91.53734414961637
+	test acc on test images is 58.29
+		Sum num of noisy samples in confident: 856 out of: 30540
+		Sum num of noisy samples in unconfident: 3649 out of: 19460
+
+epoch: 57
+	train acc on train images is 91.59327046035806
+	test acc on test images is 59.12
+		Sum num of noisy samples in confident: 860 out of: 30431
+		Sum num of noisy samples in unconfident: 3645 out of: 19569
+
+epoch: 58
+	train acc on train images is 90.8729020140665
+	test acc on test images is 58.14
+		Sum num of noisy samples in confident: 900 out of: 30500
+		Sum num of noisy samples in unconfident: 3605 out of: 19500
+
+epoch: 59
+	train acc on train images is 91.32998321611254
+	test acc on test images is 56.28
+		Sum num of noisy samples in confident: 876 out of: 30586
+		Sum num of noisy samples in unconfident: 3629 out of: 19414
+
+epoch: 60
+	train acc on train images is 95.99453524616368
+	test acc on test images is 67.11
+		Sum num of noisy samples in confident: 764 out of: 31343
+		Sum num of noisy samples in unconfident: 3741 out of: 18657
+
+epoch: 61
+	train acc on train images is 97.43194533248082
+	test acc on test images is 68.64
+		Sum num of noisy samples in confident: 694 out of: 32023
+		Sum num of noisy samples in unconfident: 3811 out of: 17977
+
+epoch: 62
+	train acc on train images is 97.48559382992327
+	test acc on test images is 69.77
+		Sum num of noisy samples in confident: 713 out of: 32435
+		Sum num of noisy samples in unconfident: 3792 out of: 17565
+
+epoch: 63
+	train acc on train images is 97.90705922314578
+	test acc on test images is 67.6
+		Sum num of noisy samples in confident: 687 out of: 32634
+		Sum num of noisy samples in unconfident: 3818 out of: 17366
+
+epoch: 64
+	train acc on train images is 97.65946691176471
+	test acc on test images is 70.37
+		Sum num of noisy samples in confident: 696 out of: 32663
+		Sum num of noisy samples in unconfident: 3809 out of: 17337
+
+epoch: 65
+	train acc on train images is 98.00734295076727
+	test acc on test images is 70.06
+		Sum num of noisy samples in confident: 684 out of: 32800
+		Sum num of noisy samples in unconfident: 3821 out of: 17200
+
+epoch: 66
+	train acc on train images is 98.20233575767263
+	test acc on test images is 69.92
+		Sum num of noisy samples in confident: 672 out of: 32812
+		Sum num of noisy samples in unconfident: 3833 out of: 17188
+
+epoch: 67
+	train acc on train images is 97.97664242327366
+	test acc on test images is 70.14
+		Sum num of noisy samples in confident: 668 out of: 32806
+		Sum num of noisy samples in unconfident: 3837 out of: 17194
+
+epoch: 68
+	train acc on train images is 98.23086836636828
+	test acc on test images is 71.13
+		Sum num of noisy samples in confident: 681 out of: 32945
+		Sum num of noisy samples in unconfident: 3824 out of: 17055
+
+epoch: 69
+	train acc on train images is 98.09780610613811
+	test acc on test images is 72.04
+		Sum num of noisy samples in confident: 655 out of: 33141
+		Sum num of noisy samples in unconfident: 3850 out of: 16859
+
+epoch: 70
+	train acc on train images is 98.1856917359335
+	test acc on test images is 70.42
+		Sum num of noisy samples in confident: 655 out of: 32939
+		Sum num of noisy samples in unconfident: 3850 out of: 17061
+
+epoch: 71
+	train acc on train images is 98.39937659846548
+	test acc on test images is 71.23
+		Sum num of noisy samples in confident: 648 out of: 32926
+		Sum num of noisy samples in unconfident: 3857 out of: 17074
+
+epoch: 72
+	train acc on train images is 98.16727941176471
+	test acc on test images is 71.74
+		Sum num of noisy samples in confident: 689 out of: 33106
+		Sum num of noisy samples in unconfident: 3816 out of: 16894
+
+epoch: 73
+	train acc on train images is 98.08504835358056
+	test acc on test images is 68.45
+		Sum num of noisy samples in confident: 694 out of: 32882
+		Sum num of noisy samples in unconfident: 3811 out of: 17118
+
+epoch: 74
+	train acc on train images is 98.09576806265984
+	test acc on test images is 70.08
+		Sum num of noisy samples in confident: 688 out of: 33085
+		Sum num of noisy samples in unconfident: 3817 out of: 16915
+
+epoch: 75
+	train acc on train images is 98.25171835038363
+	test acc on test images is 70.41
+		Sum num of noisy samples in confident: 685 out of: 32897
+		Sum num of noisy samples in unconfident: 3820 out of: 17103
+
+epoch: 76
+	train acc on train images is 98.07646659207161
+	test acc on test images is 70.83
+		Sum num of noisy samples in confident: 678 out of: 33078
+		Sum num of noisy samples in unconfident: 3827 out of: 16922
+
+epoch: 77
+	train acc on train images is 98.25197810102301
+	test acc on test images is 69.46
+		Sum num of noisy samples in confident: 662 out of: 33073
+		Sum num of noisy samples in unconfident: 3843 out of: 16927
+
+epoch: 78
+	train acc on train images is 98.037663842711
+	test acc on test images is 69.21
+		Sum num of noisy samples in confident: 661 out of: 32808
+		Sum num of noisy samples in unconfident: 3844 out of: 17192
+
+epoch: 79
+	train acc on train images is 98.0696131713555
+	test acc on test images is 70.38
+		Sum num of noisy samples in confident: 673 out of: 33019
+		Sum num of noisy samples in unconfident: 3832 out of: 16981
+
+epoch: 80
+	train acc on train images is 98.27326766304348
+	test acc on test images is 70.23
+		Sum num of noisy samples in confident: 689 out of: 33122
+		Sum num of noisy samples in unconfident: 3816 out of: 16878
+
+epoch: 81
+	train acc on train images is 98.31771499360613
+	test acc on test images is 70.86
+		Sum num of noisy samples in confident: 671 out of: 33109
+		Sum num of noisy samples in unconfident: 3834 out of: 16891
+
+epoch: 82
+	train acc on train images is 98.00464554028133
+	test acc on test images is 68.53
+		Sum num of noisy samples in confident: 666 out of: 32864
+		Sum num of noisy samples in unconfident: 3839 out of: 17136
+
+epoch: 83
+	train acc on train images is 98.06646619245524
+	test acc on test images is 67.86
+		Sum num of noisy samples in confident: 671 out of: 33022
+		Sum num of noisy samples in unconfident: 3834 out of: 16978
+
+epoch: 84
+	train acc on train images is 98.29877317774935
+	test acc on test images is 66.86
+		Sum num of noisy samples in confident: 677 out of: 33006
+		Sum num of noisy samples in unconfident: 3828 out of: 16994
+
+epoch: 85
+	train acc on train images is 98.18436301150895
+	test acc on test images is 68.72
+		Sum num of noisy samples in confident: 681 out of: 32975
+		Sum num of noisy samples in unconfident: 3824 out of: 17025
+
+epoch: 86
+	train acc on train images is 98.0708719629156
+	test acc on test images is 70.62
+		Sum num of noisy samples in confident: 706 out of: 32713
+		Sum num of noisy samples in unconfident: 3799 out of: 17287
+
+epoch: 87
+	train acc on train images is 98.07989330242967
+	test acc on test images is 70.61
+		Sum num of noisy samples in confident: 681 out of: 32939
+		Sum num of noisy samples in unconfident: 3824 out of: 17061
+
+epoch: 88
+	train acc on train images is 98.21002837276215
+	test acc on test images is 69.71
+		Sum num of noisy samples in confident: 668 out of: 33281
+		Sum num of noisy samples in unconfident: 3837 out of: 16719
+
+epoch: 89
+	train acc on train images is 98.02020060741688
+	test acc on test images is 69.16
+		Sum num of noisy samples in confident: 676 out of: 32948
+		Sum num of noisy samples in unconfident: 3829 out of: 17052
+
+epoch: 90
+	train acc on train images is 98.13605938299233
+	test acc on test images is 69.31
+		Sum num of noisy samples in confident: 665 out of: 33101
+		Sum num of noisy samples in unconfident: 3840 out of: 16899
+
+epoch: 91
+	train acc on train images is 97.80019181585678
+	test acc on test images is 68.62
+		Sum num of noisy samples in confident: 684 out of: 32750
+		Sum num of noisy samples in unconfident: 3821 out of: 17250
+
+epoch: 92
+	train acc on train images is 98.03071051790282
+	test acc on test images is 68.59
+		Sum num of noisy samples in confident: 661 out of: 33046
+		Sum num of noisy samples in unconfident: 3844 out of: 16954
+
+epoch: 93
+	train acc on train images is 98.01484574808184
+	test acc on test images is 70.17
+		Sum num of noisy samples in confident: 647 out of: 32874
+		Sum num of noisy samples in unconfident: 3858 out of: 17126
+
+epoch: 94
+	train acc on train images is 98.2280910326087
+	test acc on test images is 66.75
+		Sum num of noisy samples in confident: 694 out of: 32979
+		Sum num of noisy samples in unconfident: 3811 out of: 17021
+
+epoch: 95
+	train acc on train images is 98.2721787084399
+	test acc on test images is 66.36
+		Sum num of noisy samples in confident: 668 out of: 32902
+		Sum num of noisy samples in unconfident: 3837 out of: 17098
+
+epoch: 96
+	train acc on train images is 98.22032848465473
+	test acc on test images is 68.51
+		Sum num of noisy samples in confident: 639 out of: 33122
+		Sum num of noisy samples in unconfident: 3866 out of: 16878
+
+epoch: 97
+	train acc on train images is 97.90238371163683
+	test acc on test images is 66.92
+		Sum num of noisy samples in confident: 695 out of: 32869
+		Sum num of noisy samples in unconfident: 3810 out of: 17131
+
+epoch: 98
+	train acc on train images is 98.07259031329923
+	test acc on test images is 69.27
+		Sum num of noisy samples in confident: 659 out of: 32833
+		Sum num of noisy samples in unconfident: 3846 out of: 17167
+
+epoch: 99
+	train acc on train images is 97.86569892902813
+	test acc on test images is 66.95
+		Sum num of noisy samples in confident: 704 out of: 32596
+		Sum num of noisy samples in unconfident: 3801 out of: 17404
+
+
+final test acc on test images is 66.95
+max test acc on test images is 80.73
+Total runtime of the program is: 02:47:37
